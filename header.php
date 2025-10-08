@@ -14,11 +14,11 @@
      <header>
         <nav>
             <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="company.html">会社情報</a></li>
-                <li><a href="business.html">事業内容</a></li>
-                <li><a href="news.html">お知らせ</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="index.php">ホーム</a></li>
+                <li><a href="company.php">会社情報</a></li>
+                <li><a href="business.php">事業内容</a></li>
+                <li><a href="news.php">お知らせ</a></li>
+                <li><a href="contact.php">お問い合わせ</a></li>
             </ul>
         </nav>
      </header>
