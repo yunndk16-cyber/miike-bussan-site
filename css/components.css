@@ -1,0 +1,59 @@
+/* 会社概要のテーブル */
+.profile-table {
+    width: 100%;
+    border-collapse: collapse; /* ボーダーを重ねる */
+}
+
+.profile-table th,
+.profile-table td {
+    border: 1px solid #dddddd; /* 表に罫線を引く */
+    padding: 15px;
+    text-align: left;
+}
+
+.profile-table th {
+    background-color: #f9f9f9; /* 見出しセルの背景色 */
+    width: 25%; /* 見出しセルの幅を指定 */
+}
+
+/* --- カードデザイン --- */
+
+.card-container {
+    display: flex;            /* カードを横並びにする */
+    flex-wrap: wrap;          /* 画面幅で折り返す */
+    justify-content: center;  /* 中央揃えにする */
+    gap: 30px;                /* カード間の隙間を空ける */
+}
+
+.card {
+    width: 300px;             /* カードの幅を指定 */
+    border: 1px solid #eeeeee; /* 薄い枠線 */
+    border-radius: 8px;       /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影をつけて立体的に見せる */
+    overflow: hidden;         /* 画像のはみ出しを防ぐ */
+    transition: transform 0.3s; /* アニメーション効果 */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* マウスを乗せると少し浮き上がる */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* 画像が引き伸ばされないように調整 */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin-top: 0;
+    text-align: left; /* カード内の見出しは左揃えに */
+}
+
+.card-text {
+    font-size: 15px;
+    line-height: 1.6; /* 行間を調整して読みやすく */
+}

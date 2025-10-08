@@ -1,0 +1,48 @@
+/* --- ヘッダーとナビゲーションのデザイン --- */
+
+/* ヘッダー全体 */
+header {
+    border-bottom: 1px solid #eeeeee; /* ヘッダーの下に薄い線を引いて区切る */
+    padding: 10px 0;                  /* 上下の余白を調整 */
+}
+
+/* ナビゲーションのリスト全体 (ul) */
+nav ul {
+    list-style: none;         /* 箇条書きの黒丸（・）を消す */
+    padding: 0;
+    margin: 0;
+    display: flex;            /* 要素を横並びにする */
+    justify-content: center;  /* 中央揃えにする */
+}
+
+/* ナビゲーションの各項目 (li) */
+nav li {
+    margin: 0 20px;           /* 各項目の左右に余白を設ける */
+}
+
+/* ナビゲーションのリンク (a) */
+nav a {
+    text-decoration: none;    /* 下線を消す */
+    color: #333333;          /* 文字色をダークグレーに（ルール通り） */
+    font-weight: bold;        /* 少し太字にして見やすくする */
+    transition: color 0.3s;   /* マウスを乗せた時に色が滑らかに変わるアニメーション */
+}
+
+/* リンクにマウスを乗せた時のデザイン */
+nav a:hover {
+    color: #0050A0;          /* アクセントカラーの青に変わる（ルール通り） */
+}
+/* --- フッターのデザイン --- */
+footer {
+    text-align: center;                /* テキストを中央揃えに */
+    padding: 30px 0;                   /* 上下の余白を調整 */
+    margin-top: 60px;                  /* ページ本体との間に余白を設ける */
+    border-top: 1px solid #eeeeee;     /* フッターの上に薄い線を引く */
+    font-size: 14px;                   /* 文字サイズを少し小さくする */
+    color: #777777;                    /* 文字色を少し薄いグレーにして、主張を抑える */
+}
+
+/* 各セクションの下に余白を設ける */
+.page-section {
+    margin-bottom: 50px;
+}
