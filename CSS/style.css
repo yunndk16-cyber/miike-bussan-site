@@ -1,0 +1,15 @@
+/* 最初にページ全体の余白をリセットするおまじない */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif; /* ← フォント指定を追加 */
+    background-color: #FFFFFF; /* ← 背景色(白)を追加 */
+    color: #333333;           /* ← 文字色(ダークグレー)を追加 */
+}
+
+/* 全体のレイアウトを整える設定 */
+.container {
+    max-width: 1100px; /* コンテンツの最大幅を指定 */
+    margin: 0 auto;   /* 上下は余白なし、左右は自動で中央寄せ */
+    padding: 0 20px;  /* コンテンツの両端に少し余白を持たせる */
+}
