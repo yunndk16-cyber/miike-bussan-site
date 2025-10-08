@@ -57,3 +57,34 @@ footer {
     font-size: 14px;                   /* 文字サイズを少し小さくする */
     color: #777777;                    /* 文字色を少し薄いグレーにして、主張を抑える */
 }
+/* --- ページコンテンツの基本スタイル --- */
+
+/* h1, h2 見出しのスタイル */
+h1, h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* 各セクションの下に余白を設ける */
+.page-section {
+    margin-bottom: 50px;
+}
+
+/* 会社概要のテーブル */
+.profile-table {
+    width: 100%;
+    border-collapse: collapse; /* ボーダーを重ねる */
+}
+
+.profile-table th,
+.profile-table td {
+    border: 1px solid #dddddd; /* 表に罫線を引く */
+    padding: 15px;
+    text-align: left;
+}
+
+.profile-table th {
+    background-color: #f9f9f9; /* 見出しセルの背景色 */
+    width: 25%; /* 見出しセルの幅を指定 */
+}
