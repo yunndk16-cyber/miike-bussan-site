@@ -12,20 +12,27 @@ h1, h2 {
     margin-bottom: 50px;
 }
 
-/* 会社概要のテーブル */
-.profile-table {
-    width: 100%;
-    border-collapse: collapse; /* ボーダーを重ねる */
+/* --- ページヘッダー共通デザイン (統一版) --- */
+.page-header {
+    background-color: #fff;
+    padding: 60px 0 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
 }
 
-.profile-table th,
-.profile-table td {
-    border: 1px solid #dddddd; /* 表に罫線を引く */
-    padding: 15px;
-    text-align: left;
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0050A0; /* 統一カラー：青 */
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
-.profile-table th {
-    background-color: #f9f9f9; /* 見出しセルの背景色 */
-    width: 25%; /* 見出しセルの幅を指定 */
+.page-subtitle {
+    font-size: 0.9rem;
+    color: #888; /* サブタイトルはグレー */
+    letter-spacing: 2px;
+    text-transform: uppercase; /* 強制的に大文字にする */
+    font-family: 'Noto Sans JP', sans-serif;
 }

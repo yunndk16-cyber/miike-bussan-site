@@ -1,41 +1,108 @@
 <?php include 'header.php'; ?>
 
-    <main>
-        <h1>事業内容</h1>
+<main>
+        <div class="page-header">
+        <div class="contact-container">
+            <h1 class="page-title">営業案内</h1>
+            <p class="page-subtitle">BUSINESS</p>
+        </div>
+    </div>
 
         <div class="card-container">
 
             <div class="card">
-                <img src="https://placehold.jp/300x200.png" alt="産業機械のイメージ画像">
+                <img src="https://placehold.jp/300x200.png?text=産業機械" alt="産業機械及機器関係">
                 <div class="card-body">
                     <h3 class="card-title">産業機械及機器関係</h3>
-                    <p class="card-text">
-                        化学機械、工作機械、自動＆省力化機械、回転機械、粉粒体機械、混錬機械、破砕＆分級機械、空調機械など、多岐にわたる産業機械を取り扱っています。
-                    </p>
+                    <ul class="business-list">
+                        <li>化学機械、工作機械</li>
+                        <li>自動＆省力化機械、回転機械</li>
+                        <li>粉粒体機械、混錬機械</li>
+                        <li>破砕＆分級機械、空調機械</li>
+                        <li>送排風機械、伝導機械</li>
+                        <li>油圧＆空圧機械、燃焼機械</li>
+                        <li>工具類一切（その他附帯装置の設計・施工）</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://placehold.jp/300x200.png" alt="製缶・鉄骨工事関係のイメージ画像">
+                <img src="https://placehold.jp/300x200.png?text=物流・荷役" alt="物流・荷役車輌関係">
                 <div class="card-body">
-                    <h3 class="card-title">製缶・鉄骨工事関係</h3>
-                    <p class="card-text">
-                        各種タンク、ダクト、架台、コンベアフレーム等の設計から製作、据付まで一貫して対応いたします。
-                    </p>
+                    <h3 class="card-title">物流・荷役車輌関係</h3>
+                    <ul class="business-list">
+                        <li>各種輸送装置<br><small>（エアー、ベルト、チエン、スクリュー、バケット）</small></li>
+                        <li>揚降式搬送機械及装置</li>
+                        <li>自動立体倉庫及搬送システム</li>
+                        <li>鉄道機関車及客貨車</li>
+                        <li>土木建設機械及車輌、各種運搬車</li>
+                        <li>（その他附帯装置の設計・施工）</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://placehold.jp/300x200.png" alt="各種工事関係のイメージ画像">
+                <img src="https://placehold.jp/300x200.png?text=電気機器" alt="電気機器">
                 <div class="card-body">
-                    <h3 class="card-title">各種工事関係</h3>
-                    <p class="card-text">
-                        機械器具設置工事、管工事、鋼構造物工事、塗装工事など、専門的な技術を要する各種工事を安全第一で施工します。
-                    </p>
+                    <h3 class="card-title">電気機器</h3>
+                    <ul class="business-list">
+                        <li>防爆型機器及照明器具</li>
+                        <li>電動機、発電機、各種継電器</li>
+                        <li>鉄道信号機及交通信号機</li>
+                        <li>踏切用電装品、配電盤及機器</li>
+                        <li>コンピューター制御システム</li>
+                        <li>電動工具、電気炉、LED</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.jp/300x200.png?text=計測・測定" alt="計測、測定理化学機器">
+                <div class="card-body">
+                    <h3 class="card-title">計測、測定理化学機器</h3>
+                    <ul class="business-list">
+                        <li>工業用試験装置、理化学分析実験装置</li>
+                        <li>環境測定装置、超音波測定装置</li>
+                        <li>計測装置、秤量装置、積算記録装置</li>
+                        <li>（その他附帯する制御機器及器具）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.jp/300x200.png?text=金属・配管" alt="金属製品及配管機材">
+                <div class="card-body">
+                    <h3 class="card-title">金属製品及配管機材</h3>
+                    <ul class="business-list">
+                        <li>産業構造設計・製作・施工</li>
+                        <li>金型及機械加工品、鋳鍛造品</li>
+                        <li>各種鋼材、各種配管継手</li>
+                        <li>各種バルブ、鉄道保線用機材</li>
+                        <li>工業用金網、伸縮管接手</li>
+                        <li>ボルト・ナット、鉄工二次製品</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.jp/300x200.png?text=その他" alt="その他">
+                <div class="card-body">
+                    <h3 class="card-title">その他</h3>
+                    <ul class="business-list">
+                        <li>保安機器、防災機器、消防機器</li>
+                        <li>園芸機器、窯業製品</li>
+                        <li>合成樹脂製品、合成ゴム製品</li>
+                        <li>工業用ダイヤモンド製品</li>
+                        <li>炭素繊維製品、工業用ガラス製品</li>
+                        <li>各種溶剤、接着剤、各種充填材</li>
+                        <li>タンク洗浄工事、ライニング工事</li>
+                        <li>百年茶、アウトドア用品</li>
+                    </ul>
                 </div>
             </div>
 
         </div>
-    </main>
+    </div>
+</main>
 
 <?php include 'footer.php'; ?>

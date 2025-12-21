@@ -1,38 +1,117 @@
-<?php include 'header.php'; ?>
+<?php require_once 'header.php'; ?>
 
-    <main>
-        <h1>会社情報</h1>
+<link rel="stylesheet" href="css/company.css">
 
-        <section class="page-section">
-            <h2>経営理念</h2>
-            <p>ここに「経営理念」の文章が入ります。</p>
+<main class="company-main">
+    <div class="page-header">
+        <div class="company-container">
+            <h1 class="page-title">会社情報</h1>
+            <p class="page-subtitle">COMPANY PROFILE</p>
+        </div>
+    </div>
+
+    <div class="company-container">
+        
+        <section class="content-section">
+            <h2 class="section-title">会社概要</h2>
+            
+            <dl class="profile-list">
+                <div class="profile-row">
+                    <dt>会社名</dt>
+                    <dd>三池物産株式会社</dd>
+                </div>
+                <div class="profile-row">
+                    <dt>創業</dt>
+                    <dd>昭和6年（1931年）10月1日</dd>
+                </div>
+                <div class="profile-row">
+                    <dt>設立</dt>
+                    <dd>昭和22年（1947年）4月21日</dd>
+                </div>
+                <div class="profile-row">
+                    <dt>資本金</dt>
+                    <dd>20,000,000円</dd>
+                </div>
+                <div class="profile-row">
+                    <dt>免状</dt>
+                    <dd>建築業</dd>
+                </div>
+                <div class="profile-row">
+                    <dt>取引銀行</dt>
+                    <dd>
+                        福岡銀行、筑邦銀行、大牟田柳川信用金庫、<br>
+                        三井住友銀行、広島銀行
+                    </dd>
+                </div>
+            </dl>
         </section>
 
-        <section class="page-section">
-            <h2>会社概要・沿革</h2>
-            <table class="profile-table">
-                <tr>
-                    <th>商号</th>
-                    <td>三池物産株式会社</td>
-                </tr>
-                <tr>
-                    <th>所在地</th>
-                    <td>（ここに本社の住所が入ります）</td>
-                </tr>
-                <tr>
-                    <th>設立</th>
-                    <td>（ここに設立年月日が入ります）</td>
-                </tr>
-                <tr>
-                    <th>資本金</th>
-                    <td>（ここに資本金の額が入ります）</td>
-                </tr>
-                <tr>
-                    <th>事業内容</th>
-                    <td>（ここに事業内容の文章が入ります）</td>
-                </tr>
-            </table>
+        <section class="content-section">
+            <h2 class="section-title">会社のあゆみ</h2>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1931年（昭和6年）</div>
+                    <div class="timeline-content">
+                        <h4>「阿津坂商店」創業</h4>
+                        <p>
+                            福岡県大牟田市に於て、阿津坂浅一が個人経営として事業を開始。<br>
+                            当初は金物及び日用雑貨品を商う。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1947年（昭和22年）</div>
+                    <div class="timeline-content">
+                        <h4>有限会社三池物産を設立</h4>
+                        <p>
+                            大牟田市周辺地域に存在する三井関連企業との取引伸展に伴い、資本金19万5千円にて法人化。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1950年（昭和25年）</div>
+                    <div class="timeline-content">
+                        <h4>支店開設</h4>
+                        <p>
+                            業容の拡大と販路拡大、取扱商品の充実、発展を目指し、各支店・営業所を順次設置。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1970年（昭和45年）</div>
+                    <div class="timeline-content">
+                        <h4>海外取引の開始</h4>
+                        <p>
+                            国内取引に加え、東南アジア諸国、中近東諸国、中南米諸国等への輸出及び輸出代行を開始。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1971年（昭和46年）</div>
+                    <div class="timeline-content">
+                        <h4>「三池物産株式会社」へ組織変更</h4>
+                        <p>
+                            一層の飛躍を期すため、株式会社へと組織を改める。<br>
+                            業績の高揚と社会への貢献に努力し、現在に至る。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-    </main>
-    <?php include 'footer.php'; ?>
+    </div>
+</main>
+
+<?php require_once 'footer.php'; ?>

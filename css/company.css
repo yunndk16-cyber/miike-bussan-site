@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* --- 変数定義 --- */
+:root {
+    --cp-primary: #0050A0; /* ブランドカラー */
+    --cp-text: #333333;
+    --cp-bg: #F5F8FA;
+    --cp-border: #e0e0e0;
+}
+
+/* --- レイアウト共通 --- */
+.company-main {
+    background-color: var(--cp-bg);
+    padding-bottom: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--cp-text);
+}
+
+.company-container {
+    max-width: 900px; /* 読みやすさのため少し狭める */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ページヘッダー --- */
+.page-header {
+    background-color: #fff;
+    padding: 60px 0 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cp-primary);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- セクション共通 --- */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--cp-primary);
+    padding-left: 15px;
+    color: #000;
+}
+
+.content-section {
+    background: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+}
+
+/* --- 会社概要テーブル (Definition List) --- */
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--cp-border);
+}
+
+.profile-row {
+    display: flex;
+    border-bottom: 1px solid var(--cp-border);
+}
+
+.profile-row dt {
+    width: 30%;
+    background-color: #fafafa;
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.profile-row dd {
+    width: 70%;
+    padding: 20px;
+    margin: 0; /* デフォルトのリセット */
+}
+
+/* --- 沿革（タイムライン） --- */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* 縦線 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* 左側に線を配置 */
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px; /* 線とドットの分空ける */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ドット */
+.timeline-dot {
+    position: absolute;
+    left: 11px; /* 線の位置(20px)の中心に合わせる調整 */
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--cp-primary);
+    border-radius: 50%;
+    border: 4px solid #fff; /* 白フチをつける */
+    box-shadow: 0 0 0 1px #e0e0e0;
+}
+
+.timeline-year {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cp-primary);
+    margin-bottom: 10px;
+    font-family: sans-serif; /* 数字を見やすく */
+}
+
+.timeline-content {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+    .content-section {
+        padding: 30px 20px;
+    }
+
+    /* 概要テーブルを縦積みに */
+    .profile-row {
+        flex-direction: column;
+    }
+    .profile-row dt {
+        width: 100%;
+        border-bottom: 1px dashed #eee;
+    }
+    .profile-row dd {
+        width: 100%;
+    }
+}

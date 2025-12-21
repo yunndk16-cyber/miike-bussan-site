@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/* --- 変数定義 --- */
+:root {
+    --philo-primary: #0050A0; /* ブランドカラー */
+    --philo-text: #333333;
+    --philo-bg: #F5F8FA;
+    --font-serif: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif; /* 明朝体 */
+}
+
+/* --- レイアウト共通 --- */
+.philosophy-main {
+    background-color: var(--philo-bg);
+    padding-bottom: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--philo-text);
+}
+
+.philosophy-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ページヘッダー --- */
+.page-header {
+    background-color: #fff;
+    padding: 60px 0 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--philo-primary);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- 社訓セクション --- */
+.shakun-section {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.shakun-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* 画像スタイル */
+.shakun-img-wrapper {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.shakun-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.shakun-img:hover {
+    transform: scale(1.02);
+}
+
+/* テキストスタイル */
+.shakun-text-area {
+    font-family: var(--font-serif); /* 明朝体で重厚感を */
+    text-align: center; /* 【追加】テキストエリア全体を中央揃え */
+}
+
+.shakun-label {
+    display: block; /* 【変更】ブロック要素に変更 */
+    width: fit-content; /* 【追加】コンテンツ幅に合わせる */
+    margin: 0 auto 20px; /* 【変更】左右中央寄せ、下マージン */
+    background-color: var(--philo-primary);
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-family: sans-serif

@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+:root {
+    --contact-primary: #0050A0; /* ブランドカラー（青）→ タイトル文字色に使われます */
+    --contact-white: #FFFFFF;   /* 白 → ヘッダーの背景色に使われます */
+}
+
+.page-header {
+    background-color: var(--contact-white); /* 背景を白くする */
+    padding: 60px 0 40px;      /* 上に60px、下に40pxの余白を空ける（広々させる） */
+    text-align: center;        /* 中にある文字（タイトル）を真ん中寄せにする */
+    margin-bottom: 40px;       /* このエリアの下に40pxの隙間を作る */
+    border-bottom: 1px solid #eee; /* 下に薄いグレーの線を引く */
+}
+
+.contact-container {
+    max-width: 1000px; /* 横幅が1000px以上には広がらないようにする */
+    margin: 0 auto;    /* 画面の中央に配置する */
+    padding: 0 20px;   /* スマホなどで画面端にくっつかないよう左右に少し隙間を入れる */
+}
+
+.page-title {
+    font-size: 2rem;       /* 文字を大きくする（標準の2倍） */
+    font-weight: 700;      /* 文字を太くする */
+    color: var(--contact-primary); /* 文字色を「ブランドカラー（青）」にする */
+    margin-bottom: 10px;   /* 下の英語タイトルとの間に10pxの隙間を空ける */
+}
+
+.page-subtitle {
+    font-size: 0.9rem;  /* 文字を少し小さくする */
+    color: #888;        /* 文字色をグレーにする */
+    letter-spacing: 1px; /* 文字と文字の間隔を少し広げておしゃれにする（C O N T A C T） */
+}
+
+/* =========================================
+   アコーディオン（開閉ボタン）のスタイル
+   ========================================= */
+.accordion {
+  background-color: transparent; /* 背景透明 */
+  color: #000000; /* テキストカラー（青） */
+  cursor: pointer;
+  padding: 15px 0; /* 上下の余白 */
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  
+  /* フレックスボックスで文字とアイコンを配置 */
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  
+  /* 下線（青色） */
+  border-bottom: 2px solid #0050A0;
+  
+  /* 上の要素との距離 */
+  margin-top: 20px;
+  
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ホバー時の動き */
+.accordion:hover {
+  opacity: 0.8;
+}
+
+/* ＋－アイコンのスタイル */
+.accordion .icon {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0050A0;
+  margin-left: 10px;
+}
+
+
+/* =========================================
+   パネル（開閉する枠）のスタイル
+   ========================================= */
+.panel {
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden; /* 閉じている時は中身を隠す */
+  transition: max-height 0.3s ease-out; /* ヌルっと動くアニメーション */
+  
+  /* 影が見切れないようにするための予備余白 
+     ※JSでoverflow:visibleになった時に効果を発揮します
+  */
+  padding: 0 5px; 
+}
+
+
+/* =========================================
+   カードデザイン（中身）
+   ========================================= */
+.location-box {
+  background-color: #ffffff;
+  border-radius: 8px; /* 角丸 */
+  
+  /* 影の設定（下方向への影） */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  
+  padding: 30px;
+  border: none;
+  
+  /* カード周りの余白（影を表示するスペース確保） */
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+/* カード内のレイアウト（情報と地図の横並び） */
+.location-content {
+  display: flex;
+  flex-wrap: wrap; /* スマホで折り返す */
+  gap: 30px;       /* 情報と地図の間隔 */
+}
+
+
+/* =========================================
+   左側：拠点情報リスト
+   ========================================= */
+.location-info {
+  flex: 1; /* 余った幅を埋める */
+  min-width: 300px; /* 幅が狭くなりすぎないように */
+}
+
+.location-info dl {
+  margin: 0;
+}
+
+/* ラベルとデータの横並び設定 */
+.location-info dt {
+  float: left;
+  width: 100px; /* ラベルの幅 */
+  font-weight: 700;
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee; /* 薄い線 */
+  clear: both;
+}
+
+.location-info dd {
+  margin-left: 110px; /* ラベル幅 + 余白 */
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* メールアドレスの行など、最後の線が不要な場合（必要に応じて使用） */
+.location-info dd:last-child,
+.location-info dt:last-of-type + dd {
+    /* 共通ルールとして最後の線は残すことが多いですが、消したい場合は border-bottom: none; を追加 */
+}
+
+
+/* =========================================
+   右側：Googleマップ
+   ========================================= */
+.location-map {
+  flex: 1;
+  min-width: 300px;
+  height: 250px;
+  border-radius: 4px; /* 地図の角も少し丸く */
+  overflow: hidden;
+  background-color: #f0f0f0; /* 読み込み中の背景色 */
+}
+
+
+/* =========================================
+   レスポンシブ対応（スマホ表示）
+   ========================================= */
+@media (max-width: 768px) {
+  /* スマホでは縦並びにする */
+  .location-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* スマホでのカード内余白を少し縮める */
+  .location-box {
+    padding: 20px; 
+  }
+
+  /* 地図の高さをスマホ用に調整 */
+  .location-map {
+    height: 200px;
+  }
+  
+  /* 情報リストのレイアウト調整（必要であれば） */
+  .location-info dt {
+    width: 90px;
+  }
+  .location-info dd {
+    margin-left: 100px;
+  }
+}
