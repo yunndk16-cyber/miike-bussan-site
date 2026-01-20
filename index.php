@@ -44,42 +44,37 @@
     </section>
 
     <section class="home-section greeting-section">
-        <div class="home-container greeting-grid">
-            <div class="greeting-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Office Scene" class="greeting-img">
-                
-                <div class="established-badge">
-                    <span class="badge-label">Founded</span>
-                    <span class="badge-year">1931</span>
-                </div>
-            </div>
-
-            <div class="greeting-content">
-                <h4 style="color: var(--home-primary); font-weight:700; margin-bottom:10px;">ごあいさつ</h4>
-                <h2>信用は、<br>企業の生命なり。</h2>
-                
-                <div class="greeting-text">
-                    <p>
-                        私たち三池物産は昭和6年に創業、昭和22年に福岡県大牟田市にて設立された会社です。<br>
-                        以来、数多くのお客様に産業機械設備を販売して参りました。
-                    </p>
-                    <p>
-                        「信用・信頼」のモットーに、お客様の課題解決に真摯に取り組み、地域産業の発展に貢献することが私たちの使命です。
-                    </p>
-                    <p>
-                        従来と同様に皆様方の暖かいご支援を賜りたく心よりお願い申し上げます。
-                    </p>
-                </div>
-
-                <div class="ceo-profile">
-                    <img src="https://placehold.co/60x60/333/fff?text=CEO" alt="CEO" class="ceo-img">
-                    <div class="ceo-info">
-                        <h4 style="font-size:0.9rem; margin-bottom:2px;">創業者</h4>
-                        <span style="font-size:0.8rem; color:#777;">阿津坂 浅一</span>
+        <div class="home-container">
+            
+            <h4 style="color: var(--home-primary); font-weight:700; margin-bottom:30px; text-align: center;">ごあいさつ</h4>
+            
+            <div class="greeting-grid">
+                <div class="greeting-image-wrapper">
+                    <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img" style="object-position: top center;">
                     </div>
+
+                <div class="greeting-content">
+                    <h2>信用は、<br>企業の生命なり。</h2>
+                    
+                    <div class="greeting-text">
+                        <p>
+                            私たち三池物産は昭和6年に創業、昭和22年に福岡県大牟田市にて設立された会社です。<br>
+                            以来、数多くのお客様に産業機械設備を販売して参りました。
+                        </p>
+                        <p>
+                            「信用・信頼」のモットーに、お客様の課題解決に真摯に取り組み、地域産業の発展に貢献することが私たちの使命です。
+                        </p>
+                        <p>
+                            従来と同様に皆様方の暖かいご支援を賜りたく心よりお願い申し上げます。
+                        </p>
+                        
+                        <p style="text-align: right; margin-top: 30px; font-weight: 700; color: #555;">
+                            創業者　阿津坂 浅一
+                        </p>
+                        </div>
                 </div>
-            </div>
-        </div>
+            </div> 
+        </div> 
     </section>
 
     <section class="home-section origin-section">
@@ -98,7 +93,7 @@
 
                 <p>
                     　鎌倉時代の初め、1192年3月に今山嶽（現在の三池山）が一夜大鳴動を起こし、その山頂に三つの池が出現した。<br>
-                    そのため、時の領主三毛師員が朝廷に奏聞して「三毛」を<span class="origin-highlight">「三池」</span>に改めたというのである（南筑明覧）。
+                    　そのため、時の領主三毛師員が朝廷に奏聞して「三毛」を<span class="origin-highlight">「三池」</span>に改めたというのである（南筑明覧）。
                 </p>
 
                 <p>
