@@ -22,11 +22,13 @@
                 </div>
                 <div class="profile-row">
                     <dt>創業</dt>
-                    <dd>昭和6年（1931年）10月1日</dd>
+                    <dd>昭和6年(1931年)<br>
+                        10月1日</dd>
                 </div>
                 <div class="profile-row">
                     <dt>設立</dt>
-                    <dd>昭和22年（1947年）4月21日</dd>
+                    <dd>昭和22年(1947年)<br>
+                        4月21日</dd>
                 </div>
                 <div class="profile-row">
                     <dt>資本金</dt>

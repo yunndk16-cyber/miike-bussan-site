@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
+/* ▼▼▼ 全ての要素で余白を幅に含める（必須） ▼▼▼ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* --- 変数定義 --- */
 :root {
-    --cp-primary: #0050A0; /* ブランドカラー */
+    --cp-primary: #0050A0;
     --cp-text: #333333;
     --cp-bg: #F5F8FA;
     --cp-border: #e0e0e0;
@@ -14,12 +19,14 @@
     padding-bottom: 80px;
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--cp-text);
+    overflow-x: hidden;
 }
 
 .company-container {
-    max-width: 900px; /* 読みやすさのため少し狭める */
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* --- ページヘッダー --- */
@@ -61,33 +68,43 @@
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     margin-bottom: 60px;
+    width: 100%;
 }
 
-/* --- 会社概要テーブル (Definition List) --- */
+/* --- 会社概要テーブル (横並びレイアウト) --- */
 .profile-list {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--cp-border);
+    width: 100%;
 }
 
+/* ここで横並びを指定 */
 .profile-row {
     display: flex;
+    flex-direction: row; /* 常に横並び */
     border-bottom: 1px solid var(--cp-border);
+    width: 100%;
 }
 
+/* 左側：項目名（背景あり） */
 .profile-row dt {
-    width: 30%;
+    width: 30%;      /* 幅30% */
     background-color: #fafafa;
     padding: 20px;
     font-weight: 700;
     display: flex;
-    align-items: center;
+    align-items: center; /* 上下中央揃え */
+    /* 文字が勝手に改行して縦書きみたいにならないための設定 */
+    white-space: nowrap; 
 }
 
+/* 右側：内容 */
 .profile-row dd {
-    width: 70%;
+    width: 70%;      /* 幅70% */
     padding: 20px;
-    margin: 0; /* デフォルトのリセット */
+    margin: 0;
+    word-break: break-all; /* 長い英単語などでレイアウトが崩れないように */
 }
 
 /* --- 沿革（タイムライン） --- */
@@ -96,13 +113,12 @@
     padding: 20px 0;
 }
 
-/* 縦線 */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 20px; /* 左側に線を配置 */
+    left: 20px;
     width: 2px;
     background: #e0e0e0;
 }
@@ -110,23 +126,22 @@
 .timeline-item {
     position: relative;
     margin-bottom: 40px;
-    padding-left: 60px; /* 線とドットの分空ける */
+    padding-left: 60px;
 }
 
 .timeline-item:last-child {
     margin-bottom: 0;
 }
 
-/* ドット */
 .timeline-dot {
     position: absolute;
-    left: 11px; /* 線の位置(20px)の中心に合わせる調整 */
+    left: 11px;
     top: 5px;
     width: 20px;
     height: 20px;
     background: var(--cp-primary);
     border-radius: 50%;
-    border: 4px solid #fff; /* 白フチをつける */
+    border: 4px solid #fff;
     box-shadow: 0 0 0 1px #e0e0e0;
 }
 
@@ -135,7 +150,7 @@
     font-weight: 700;
     color: var(--cp-primary);
     margin-bottom: 10px;
-    font-family: sans-serif; /* 数字を見やすく */
+    font-family: sans-serif;
 }
 
 .timeline-content {
@@ -149,21 +164,15 @@
     color: #000;
 }
 
-/* --- レスポンシブ --- */
+/* --- レスポンシブ (スマホ調整) --- */
 @media (max-width: 768px) {
     .content-section {
-        padding: 30px 20px;
+        padding: 30px 15px; /* 外枠の余白を少し減らす */
     }
 
-    /* 概要テーブルを縦積みに */
-    .profile-row {
-        flex-direction: column;
-    }
+    /* ▼▼▼ スマホでも横並びを維持するための調整 ▼▼▼ */
     .profile-row dt {
-        width: 100%;
-        border-bottom: 1px dashed #eee;
-    }
-    .profile-row dd {
-        width: 100%;
-    }
-}
+        width: 30%; /* 比率はPCと同じ */
+        padding: 15px 10px; /* 余白を狭くして文字スペース確保 */
+        font-size: 0.85rem; /* 文字を少し小さく */
+        white-space: normal; /* 必要なら改行を

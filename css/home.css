@@ -172,8 +172,43 @@
     .greeting-image-wrapper { margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 }
 
+/* --- スマホ用レイアウト調整 (画面幅 576px以下) --- */
 @media (max-width: 576px) {
-    /* .hero h1 のフォントサイズ調整は不要になったため削除 */
-    .stats-grid { grid-template-columns: 1fr; }
-    /* バッジ位置調整も不要になったため削除 */
+    /* カードを「2列」にして2段に収める */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr; /* 1列(1fr)ではなく2列にする */
+        gap: 15px 10px; /* 縦横の隙間を調整 */
+    }
+
+    /* 全体の余白を少し詰める */
+    .stats-bar {
+        padding: 30px 0;
+    }
+
+    /* 文字サイズを全体的に小さくする */
+    .stats-label {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+
+    .stats-number {
+        font-size: 2rem; /* 数字を小さく */
+        margin: 5px 0;
+    }
+    
+    /* 「OMUTA」の文字が大きすぎるのを強制的に小さく揃える */
+    .stats-number[style] {
+        font-size: 1.8rem !important; 
+    }
+
+    .stats-sub {
+        font-size: 0.65rem;
+    }
+    
+    /* ごあいさつ画像のバッジなどの調整（既存のまま維持） */
+    .established-badge { 
+        right: 0; 
+        bottom: -10px; 
+        padding: 15px 20px; 
+    }
 }

@@ -3,12 +3,10 @@
 <link rel="stylesheet" href="css/home.css">
 
 <main>
-    <section class="hero" style="padding: 0; background: none; height: auto; min-height: auto;">
+    <section class="hero" style="padding: 0; margin: 0; width: 100%; font-size: 0; line-height: 0;">
         <img src="images/TOP1.jpg" alt="トップ画像" style="width: 100%; height: auto; display: block;">
     </section>
-    <section class="stats-bar">
-
-    <section class="stats-bar">
+    <section class="stats-bar" style="margin-top: 0;">
         <div class="home-container">
             <div class="stats-grid">
                 <div class="stats-item">
@@ -34,20 +32,15 @@
             </div>
         </div>
     </section>
-
     <section class="home-section greeting-section">
         <div class="home-container">
-            
             <h4 style="color: var(--home-primary); font-weight:700; margin-bottom:30px; text-align: center;">ごあいさつ</h4>
-            
             <div class="greeting-grid">
                 <div class="greeting-image-wrapper">
                     <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img" style="object-position: top center;">
-                    </div>
-
+                </div>
                 <div class="greeting-content">
                     <h2>信用は、<br>企業の生命なり。</h2>
-                    
                     <div class="greeting-text">
                         <p>
                             私たち三池物産は昭和6年に創業、昭和22年に福岡県大牟田市にて設立された会社です。<br>
@@ -59,11 +52,10 @@
                         <p>
                             従来と同様に皆様方の暖かいご支援を賜りたく心よりお願い申し上げます。
                         </p>
-                        
                         <p style="text-align: right; margin-top: 30px; font-weight: 700; color: #555;">
                             創業者　阿津坂 浅一
                         </p>
-                        </div>
+                    </div>
                 </div>
             </div> 
         </div> 
@@ -72,28 +64,23 @@
     <section class="home-section origin-section">
         <div class="home-container origin-wrapper">
             <h2 class="section-title">社名の由来</h2>
-            
             <div class="origin-content">
                 <p>
                     　三池物産株式会社の社名は、福岡県大牟田市の旧地名「三池」に由来します。
                 </p>
-                
                 <p>
                     　「三池」という地名の起こりの定説は「日本書紀」や「風土記」によると、当地の景行天皇行幸の折、巨大な櫪木（くぬぎ）があり、その大樹の影は、朝日が暉けば杵島山（長崎県の多良岳か？）を隠し、夕日が暉けば阿蘇山を覆うと言われた。<br>
                     　景行天皇は、この樹は神樹であると言われ、これを因んでこの地を「御木の国」と名付けられ、それが後に訛って「三毛」になる。律令国家の公式名称は、筑後国三池郡である（延喜式）。
                 </p>
-
                 <p>
                     　鎌倉時代の初め、1192年3月に今山嶽（現在の三池山）が一夜大鳴動を起こし、その山頂に三つの池が出現した。<br>
                     　そのため、時の領主三毛師員が朝廷に奏聞して「三毛」を<span class="origin-highlight">「三池」</span>に改めたというのである（南筑明覧）。
                 </p>
-
                 <p>
                     　史料上に「三池郡」が始めて現れるのは、室町時代初期の永享2年（1430年）である（富来文書）。<br>
                     　明治4年（1871年）三池藩三池県となる、同年11月久留米、柳河、三池の3県を廃し三潴県となり、後三潴県を経て明治9年（1876年）福岡県に合併。<br>
                     　明治22年（1889年）町制施行で、大牟田町と三池町が出来る。
                 </p>
-
                 <p>
                     　明治29年（1896年）郡制施行で三池郡（2町9ヶ村に分かつ）、大牟田町となる。大正6年3月（1917年）市制施行で大牟田町は大牟田市となる。<br>
                     　その後昭和4年（1929年）に三川町を市に編入、昭和16年（1941年）に三池町、銀水村、駛馬町、玉川村を市に編入し、現在の大牟田市勢となる。
