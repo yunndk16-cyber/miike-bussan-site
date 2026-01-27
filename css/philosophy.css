@@ -8,6 +8,11 @@
     --font-serif: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif; /* 明朝体 */
 }
 
+/* 余白計算の補正 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* --- レイアウト共通 --- */
 .philosophy-main {
     background-color: var(--philo-bg);
@@ -55,9 +60,10 @@
 
 .shakun-grid {
     display: grid;
+    /* PCでは左右2分割 */
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: center; /* 垂直方向の中央揃え */
 }
 
 /* 画像スタイル */
@@ -65,6 +71,7 @@
     box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
     border-radius: 4px;
     overflow: hidden;
+    line-height: 0;
 }
 
 .shakun-img {
@@ -78,18 +85,72 @@
     transform: scale(1.02);
 }
 
-/* テキストスタイル */
+/* --- テキストスタイル（ここを中心に修正） --- */
 .shakun-text-area {
-    font-family: var(--font-serif); /* 明朝体で重厚感を */
-    text-align: center; /* 【追加】テキストエリア全体を中央揃え */
+    font-family: var(--font-serif);
+    /* ▼ Flexboxで中身を中央揃えにする設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* これで青いラベルが真ん中に来ます */
+    justify-content: center;
+    text-align: center;      /* 文字自体も中央揃え */
 }
 
 .shakun-label {
-    display: block; /* 【変更】ブロック要素に変更 */
-    width: fit-content; /* 【追加】コンテンツ幅に合わせる */
-    margin: 0 auto 20px; /* 【変更】左右中央寄せ、下マージン */
     background-color: var(--philo-primary);
     color: #fff;
-    padding: 5px 15px;
+    padding: 5px 20px;
     font-size: 0.9rem;
-    font-family: sans-serif
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+}
+
+.shakun-heading {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    width: fit-content; /* 線の長さを文字幅に合わせる */
+    color: #000;
+}
+
+.shakun-body p {
+    font-size: 1.1rem;
+    line-height: 2.4;
+    margin-bottom: 30px;
+}
+
+.shakun-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* --- レスポンシブ設定（スマホ対応） --- */
+@media (max-width: 768px) {
+    .shakun-section {
+        padding: 40px 20px;
+    }
+
+    /* スマホでは1列（画像上・文章下） */
+    .shakun-grid {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    
+    .shakun-img-wrapper {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .shakun-heading {
+        font-size: 1.6rem;
+        width: 100%; /* スマホでは線を横いっぱいにしてもOK */
+    }
+
+    .shakun-body p {
+        font-size: 1rem;
+        line-height: 2;
+    }
+}

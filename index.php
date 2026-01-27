@@ -53,7 +53,9 @@
                             従来と同様に皆様方の暖かいご支援を賜りたく心よりお願い申し上げます。
                         </p>
                         <p style="text-align: right; margin-top: 30px; font-weight: 700; color: #555;">
-                            創業者　阿津坂 浅一
+                            創業者　阿津坂 浅一<br>
+                            　　　　明治42年～平成4年<br>
+                            　　　　（1909年～1992年）<br>
                         </p>
                     </div>
                 </div>

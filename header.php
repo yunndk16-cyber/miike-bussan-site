@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>三池物産株式会社</title>
     <link rel="stylesheet" href="css/base.css">
-    </head>
+    <link rel="stylesheet" href="css/footer.css">
+</head>
 <body>
     <header class="site-header">
         <div class="header-inner">

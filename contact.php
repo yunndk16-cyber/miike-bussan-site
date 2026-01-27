@@ -43,7 +43,7 @@
                     </p>
                 </div>
                 <div class="contact-action">
-                    <a href="omuta@miike-bussan.co.jp" class="mail-btn">
+                    <a href="mailto:omuta@miike-bussan.co.jp" class="mail-btn">
                         omuta@miike-bussan.co.jp
                     </a>
                 </div>

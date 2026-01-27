@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+/* --- 変数定義 --- */
+:root {
+    --announce-primary: #0050A0; /* ブランドカラー */
+    --announce-bg: #F5F8FA;
+    --text-color: #333;
+}
+
+/* 基本設定 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.announce-main {
+    background-color: var(--announce-bg);
+    padding-bottom: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-color);
+}
+
+.announce-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ヘッダー --- */
+.page-header {
+    background-color: #fff;
+    padding: 60px 0 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--announce-primary);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* --- 募集セクション --- */
+.recruit-section {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* 画像エリア */
+.recruit-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover; /* 画像の比率を保ったままトリミング */
+    display: block;
+}
+
+/* コンテンツエリア */
+.recruit-content {
+    padding: 50px;
+}
+
+.recruit-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--announce-primary);
+    text-align: center;
+}
+
+.recruit-lead {
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+/* 求める人物像リスト */
+.ideal-candidate {
+    background-color: #f9fcff;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    border: 1px solid #e1eaf5;
+}
+
+.ideal-candidate h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.ideal-candidate h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--announce-primary);
+}
+
+.candidate-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.candidate-list li {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 4px solid var(--announce-primary);
+}
+
+.candidate-list li:last-child {
+    margin-bottom: 0;
+}
+
+.list-head {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--announce-primary);
+}
+
+.candidate-list p {
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* お問い合わせエリア */
+.recruit-contact {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.recruit-contact h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.recruit-mail-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--announce-primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 18px 40px;
+    border-radius: 50px;
+    transition: opacity 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,80,160, 0.3);
+    margin: 20px 0 10px;
+}
+
+.recruit-mail-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.mail-note {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+    .recruit-content {
+        padding: 30px 20px;
+    }
+    
+    .recruit-title {
+        font-size: 1.5rem;
+    }
+
+    .ideal-candidate {
+        padding: 25px;
+    }
+
+    .recruit-mail-btn {
+        width: 100%; /* スマホではボタンを幅いっぱいに */
+        padding: 15px;
+    }
+}

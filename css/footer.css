@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/* ====================================
+   フッターエリアのデザイン
+   ==================================== */
+
+/* --- 基本設定 --- */
+.site-footer {
+    background-color: #222; /* 濃いグレーで引き締める */
+    color: #bbb;            /* 文字は明るめのグレー */
+    padding: 60px 0 20px;   /* 上の余白を広めに */
+    margin-top: 80px;       /* コンテンツとの距離 */
+    font-size: 0.9rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 上部：左右2カラムレイアウト --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between; /* 左右に配置 */
+    align-items: flex-start;        /* 上揃え */
+    margin-bottom: 50px;
+}
+
+/* 左側：ロゴと住所 */
+.footer-info {
+    max-width: 400px;
+}
+
+.footer-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    /* ロゴの色を白く反転させる魔法のコード */
+    filter: brightness(0) invert(1);
+}
+
+.footer-company-name {
+    color: #fff; /* 社名は白で強調 */
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.footer-address {
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* 右側：ナビゲーションリンク */
+.footer-nav {
+    /* 必要に応じて幅指定など */
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列で表示 */
+    gap: 15px 30px; /* 縦横の間隔 */
+}
+
+.footer-nav-list a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.footer-nav-list a:hover {
+    color: #0050A0; /* ブランドカラー（青） */
+    transform: translateX(5px); /* 少し右に動く */
+}
+
+/* --- 下部：注意書きとコピーライト --- */
+.footer-bottom {
+    border-top: 1px solid #444; /* 区切り線 */
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-note p {
+    margin: 0;
+}
+
+.copyright {
+    margin: 0;
+    opacity: 0.5;
+}
+
+/* --- スマホ対応（レスポンシブ） --- */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 0 20px;
+        text-align: center; /* スマホでは中央揃え */
+    }
+
+    .footer-top {
+        flex-direction: column; /* 縦積みに変更 */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-info {
+        max-width: 100%;
+    }
+
+    .footer-logo-link {
+        justify-content: center;
+    }
+
+    /* リンクも中央寄せで見やすく */
+    .footer-nav-list {
+        grid-template-columns: 1fr; /* 1列にする */
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-nav-list a:hover {
+        transform: none; /* スマホでは動きを止める（誤タップ防止） */
+    }
+}
