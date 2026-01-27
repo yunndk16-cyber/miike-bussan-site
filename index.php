@@ -4,7 +4,7 @@
 
 <main>
     <section class="hero" style="padding: 0; margin: 0; width: 100%; font-size: 0; line-height: 0;">
-        <img src="images/TOP1.jpg" alt="トップ画像" style="width: 100%; height: auto; display: block;">
+        <img src="images/TOP3.jpg" alt="トップ画像" style="width: 100%; height: auto; display: block;">
     </section>
     <section class="stats-bar" style="margin-top: 0;">
         <div class="home-container">

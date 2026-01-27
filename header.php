@@ -17,11 +17,11 @@
             <nav class="pc-nav">
                 <ul class="nav-list">
                     <li><a href="index.php">ホーム</a></li>
+                    <li><a href="philosophy.php">社訓</a></li>
                     <li><a href="company.php">会社概要</a></li>
                     <li><a href="business.php">事業案内</a></li>
-                    <li class="has-dropdown">
-                        <a href="location.php">所在地</a>
-                    </li>
+                    <li><a href="location.php">所在地</a></li>
+                    <li><a href="announcement.php">アナウンス</a></li>
                     <li><a href="contact.php" class="btn-contact">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -36,9 +36,11 @@
         <nav class="mobile-nav" id="js-mobile-nav">
             <ul class="mobile-nav-list">
                 <li><a href="index.php">ホーム</a></li>
+                <li><a href="philosophy.php">社訓</a></li>
                 <li><a href="company.php">会社概要</a></li>
                 <li><a href="business.php">事業案内</a></li>
                 <li><a href="location.php">所在地</a></li>
+                <li><a href="announcement.php">アナウンス</a></li>
                 <li><a href="contact.php">お問い合わせ</a></li>
             </ul>
         </nav>

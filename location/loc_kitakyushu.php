@@ -28,6 +28,7 @@
             <div class="location-map">
                 <iframe 
                     src="https://maps.google.co.jp/maps?q=三池物産株式会社+北九州営業所&output=embed&t=m&z=16"
+                    width="100%" 
                     height="100%" 
                     style="border:0;" 
                     allowfullscreen="" 

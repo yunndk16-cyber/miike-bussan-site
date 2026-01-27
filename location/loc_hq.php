@@ -15,10 +15,10 @@
                     <dd>福岡県大牟田市大正町２丁目５番地５</dd>
                     
                     <dt>電話番号</dt>
-                    <dd>０９４４－５７－１１１１(代表)</dd>
+                    <dd>0944-57-1111(代表)</dd>
                     
                     <dt>FAX</dt>
-                    <dd>０９４４－５７－１１１９</dd>
+                    <dd>0944-57-1119</dd>
                     
                     <dt>Email</dt>
                     <dd style="border-bottom: none;">omuta@miike-bussan.co.jp</dd>
