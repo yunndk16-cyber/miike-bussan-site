@@ -19,61 +19,11 @@
 }
 
 /* --- Hero Section --- */
+/* 画像のみになったため、以前の複雑な装飾設定は全て削除しました */
 .hero {
     position: relative;
-    /* 【重要】テキスト直下でセクションを終了させるための余白調整 */
-    padding: 150px 0 60px;
-    
-    /* 背景画像 */
-    background-image: url('https://images.unsplash.com/photo-1542838686-37da4a9fd1b3?q=80&w=2000&auto=format&fit=crop');
-    background-size: cover;
-    /* 【重要】画像の「上辺」を基準に表示し、高さが足りない場合は下側(コンクリート部分)をカットする */
-    background-position: center top; 
-    
-    color: white;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(0, 30, 60, 0.6), rgba(0, 30, 60, 0.4));
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    /* インラインスタイルで制御しているため、CSS側は最低限のリセットのみ記述しておきます */
     width: 100%;
-    /* 【重要】左寄せを強制 */
-    text-align: left !important;
-}
-
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900;
-    margin-bottom: 25px;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    /* 【重要】見出し自体も左寄せ */
-    text-align: left;
-    width: 100%;
-}
-
-.hero h1 span {
-    color: #6FA4E8;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    max-width: 700px;
-    opacity: 0.95;
-    line-height: 1.8;
-    /* 【重要】段落も左寄せ */
-    text-align: left;
-    margin-left: 0; /* マージンリセット */
 }
 
 /* --- Stats Section --- */
@@ -137,7 +87,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: flex-start; /* 文章量に合わせて上揃えに変更 */
 }
 
 .greeting-image-wrapper {
@@ -152,32 +102,7 @@
     display: block;
 }
 
-.established-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: white;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-    border-left: 5px solid var(--home-primary);
-}
-
-.badge-label {
-    display: block;
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 5px;
-}
-
-.badge-year {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--home-text);
-    line-height: 1;
-}
+/* 不要になったバッジ（.established-badge）関連のスタイルは削除しました */
 
 .greeting-content h2 {
     font-size: 2.5rem;
@@ -194,20 +119,7 @@
     line-height: 2;
 }
 
-.ceo-profile {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-    gap: 15px;
-}
-
-.ceo-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #ddd;
-}
+/* 不要になったプロフィール（.ceo-profile）関連のスタイルは削除しました */
 
 /* --- Origin Section --- */
 .origin-section {
@@ -254,15 +166,14 @@
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .hero { padding: 120px 0 40px; }
+    /* .hero のpadding調整は不要になったため削除 */
     .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .greeting-grid { grid-template-columns: 1fr; }
     .greeting-image-wrapper { margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 }
 
 @media (max-width: 576px) {
-    .hero { padding: 100px 0 40px; }
-    .hero h1 { font-size: 2.5rem; }
+    /* .hero h1 のフォントサイズ調整は不要になったため削除 */
     .stats-grid { grid-template-columns: 1fr; }
-    .established-badge { right: 0; bottom: -10px; padding: 15px 20px; }
+    /* バッジ位置調整も不要になったため削除 */
 }

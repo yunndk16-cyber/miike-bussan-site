@@ -3,18 +3,10 @@
 <link rel="stylesheet" href="css/home.css">
 
 <main>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>
-                信用と信頼で、<br>
-                <span>産業の明日</span>を拓く。
-            </h1>
-            <p>
-                1931年の創業以来、三池物産は産業機械・物流の総合商社として<br>
-                地域社会とお客様の発展に貢献し続けています。
-            </p>
-        </div>
+    <section class="hero" style="padding: 0; background: none; height: auto; min-height: auto;">
+        <img src="images/TOP1.jpg" alt="トップ画像" style="width: 100%; height: auto; display: block;">
     </section>
+    <section class="stats-bar">
 
     <section class="stats-bar">
         <div class="home-container">
