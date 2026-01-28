@@ -77,6 +77,7 @@
     flex-direction: column;
     border-top: 1px solid var(--cp-border);
     width: 100%;
+    margin: 0;
 }
 
 /* ここで横並びを指定 */
@@ -105,6 +106,30 @@
     padding: 20px;
     margin: 0;
     word-break: break-all; /* 長い英単語などでレイアウトが崩れないように */
+    line-height: 1.8;
+}
+
+/* --- 免状（許認可）専用のデザイン --- */
+.license-block {
+    margin-bottom: 20px; /* 2つの免状の間隔をあける */
+}
+
+.license-block:last-child {
+    margin-bottom: 0;
+}
+
+.license-title {
+    display: block; /* 改行させる */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.license-number {
+    display: block;
+    color: #555;
+    font-size: 0.95em;
+    padding-left: 10px; /* 番号だけ少し右にずらす */
 }
 
 /* --- 沿革（タイムライン） --- */
@@ -175,4 +200,17 @@
         width: 30%; /* 比率はPCと同じ */
         padding: 15px 10px; /* 余白を狭くして文字スペース確保 */
         font-size: 0.85rem; /* 文字を少し小さく */
-        white-space: normal; /* 必要なら改行を
+        white-space: normal; /* スマホなら改行してもOK */
+        line-height: 1.4;
+    }
+    
+    .profile-row dd {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .license-number {
+        font-size: 0.85rem;
+        padding-left: 0; /* スマホでは左揃え */
+    }
+}

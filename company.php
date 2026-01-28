@@ -34,9 +34,20 @@
                     <dt>資本金</dt>
                     <dd>20,000,000円</dd>
                 </div>
+                
                 <div class="profile-row">
                     <dt>免状</dt>
-                    <dd>建築業</dd>
+                    <dd>
+                        <div class="license-block">
+                            <span class="license-title">一般建設業：管工事業</span>
+                            <span class="license-number">許可番号：福岡県知事許可（般-6）第117115号</span>
+                        </div>
+                        
+                        <div class="license-block">
+                            <span class="license-title">一般建設業：機械器具設置工事</span>
+                            <span class="license-number">許可番号：福岡県知事許可（般-6）第117115号</span>
+                        </div>
+                    </dd>
                 </div>
                 <div class="profile-row">
                     <dt>取引銀行</dt>
