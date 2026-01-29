@@ -1,15 +1,16 @@
 @charset "UTF-8";
 
-/* --- 変数定義 (トップページ用) --- */
+/* ====================================
+   ホーム：変数・共通設定
+   ==================================== */
 :root {
-    --home-primary: #0050A0; /* トラディショナルな青 */
-    --home-text: #333333;    /* ダークグレー */
+    --home-primary: #0050A0;
+    --home-text: #333333;
     --home-light-bg: #F5F8FA;
 }
 
-/* --- Utility for Home --- */
 .home-section {
-    padding: 80px 0;
+    padding: 20px 0;
 }
 
 .home-container {
@@ -18,15 +19,18 @@
     padding: 0 20px;
 }
 
-/* --- Hero Section --- */
-/* 画像のみになったため、以前の複雑な装飾設定は全て削除しました */
+/* ====================================
+   メインビジュアル
+   ==================================== */
 .hero {
-    position: relative;
-    /* インラインスタイルで制御しているため、CSS側は最低限のリセットのみ記述しておきます */
     width: 100%;
+    margin-bottom: 0;
+    line-height: 0;
 }
 
-/* --- Stats Section --- */
+/* ====================================
+   数字で見る（Stats）バー
+   ==================================== */
 .stats-bar {
     background: linear-gradient(135deg, #004080 0%, #0050A0 100%);
     color: white;
@@ -44,7 +48,7 @@
     position: relative;
 }
 
-/* 区切り線（PCのみ） */
+/* PCのみ区切り線 */
 @media (min-width: 993px) {
     .stats-item:not(:last-child)::after {
         content: '';
@@ -58,76 +62,104 @@
 }
 
 .stats-label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     opacity: 0.8;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 5px;
+    font-family: sans-serif;
 }
 
 .stats-number {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
     line-height: 1.1;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin-bottom: 5px;
 }
 
 .stats-sub {
     font-size: 0.85rem;
-    opacity: 0.7;
-    margin-top: 5px;
+    opacity: 0.8;
 }
 
-/* --- Greeting Section --- */
+/* ====================================
+   ごあいさつセクション
+   ==================================== */
 .greeting-section {
-    background-color: var(--home-light-bg);
+    background-color: #fff;
 }
+
+/* ▼▼▼ 修正：「ごあいさつ」の見出しを程よい大きさに変更 ▼▼▼ */
+.greeting-section h4 {
+    font-size: 2.0rem;   /* 2.5rem → 2.0rem に少し縮小しました */
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--home-primary);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: "Yu Mincho", serif;
+}
+/* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
 .greeting-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 60px;
-    align-items: flex-start; /* 文章量に合わせて上揃えに変更 */
+    align-items: center;
 }
 
+/* 画像まわり */
 .greeting-image-wrapper {
     position: relative;
+    box-shadow: 20px 20px 0 #f0f4f8;
+    border-radius: 4px;
 }
 
 .greeting-img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     display: block;
 }
 
-/* 不要になったバッジ（.established-badge）関連のスタイルは削除しました */
-
+/* 文章まわり */
 .greeting-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    letter-spacing: -0.05em;
+    font-size: 2.4rem;
     line-height: 1.4;
-    color: var(--home-text);
+    margin-bottom: 35px;
+    color: var(--home-primary);
+    font-family: "Yu Mincho", serif;
+    letter-spacing: -0.05em;
 }
 
 .greeting-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 2;
+    color: #444;
 }
 
-/* 不要になったプロフィール（.ceo-profile）関連のスタイルは削除しました */
+.greeting-text p {
+    font-size: 1.25rem; 
+    line-height: 2.0;   
+    margin-bottom: 30px;
+    text-align: justify;
+}
 
-/* --- Origin Section --- */
+.greeting-text p:last-child {
+    font-size: 1.1rem; 
+    text-align: right;
+    font-weight: 700;
+    color: #555;
+    margin-top: 40px;
+}
+
+/* ====================================
+   社名の由来セクション
+   ==================================== */
 .origin-section {
-    background-color: white;
+    background-color: var(--home-light-bg);
 }
 
 .origin-wrapper {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -136,9 +168,9 @@
     color: var(--home-primary);
     text-align: center;
     margin-bottom: 50px;
+    font-weight: 700;
     position: relative;
     padding-bottom: 15px;
-    font-weight: 700;
 }
 
 .section-title::after {
@@ -157,58 +189,83 @@
     text-align: justify;
     line-height: 2;
     color: var(--home-text);
+    font-size: 1.05rem;
 }
 
 .origin-highlight {
     font-weight: 700;
     color: var(--home-primary);
+    font-size: 1.2rem;
 }
 
-/* --- Responsive Adjustments --- */
+/* ====================================
+   レスポンシブ対応
+   ==================================== */
 @media (max-width: 992px) {
-    /* .hero のpadding調整は不要になったため削除 */
-    .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .greeting-grid { grid-template-columns: 1fr; }
-    .greeting-image-wrapper { margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-}
+    .stats-grid { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px; 
+    }
+    
+    .stats-item::after { display: none; }
 
-/* --- スマホ用レイアウト調整 (画面幅 576px以下) --- */
-@media (max-width: 576px) {
-    /* カードを「2列」にして2段に収める */
-    .stats-grid {
-        grid-template-columns: 1fr 1fr; /* 1列(1fr)ではなく2列にする */
-        gap: 15px 10px; /* 縦横の隙間を調整 */
+    .greeting-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    
+    .greeting-image-wrapper { 
+        margin: 0 auto 40px; 
+        max-width: 500px;
+        box-shadow: 10px 10px 0 #f0f4f8;
     }
 
-    /* 全体の余白を少し詰める */
+    .greeting-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+/* スマホ用調整 */
+@media (max-width: 576px) {
+    /* 「ごあいさつ」見出しのスマホ調整 */
+    .greeting-section h4 {
+        font-size: 1.7rem; /* スマホでも少し控えめに調整 */
+        margin-bottom: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 10px;
+    }
+
     .stats-bar {
         padding: 30px 0;
     }
 
-    /* 文字サイズを全体的に小さくする */
     .stats-label {
         font-size: 0.7rem;
-        margin-bottom: 0;
     }
 
     .stats-number {
-        font-size: 2rem; /* 数字を小さく */
+        font-size: 2rem;
         margin: 5px 0;
     }
     
-    /* 「OMUTA」の文字が大きすぎるのを強制的に小さく揃える */
     .stats-number[style] {
-        font-size: 1.8rem !important; 
+        font-size: 1.6rem !important; 
     }
 
     .stats-sub {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
     
-    /* ごあいさつ画像のバッジなどの調整（既存のまま維持） */
-    .established-badge { 
-        right: 0; 
-        bottom: -10px; 
-        padding: 15px 20px; 
+    .greeting-text p {
+        font-size: 1.05rem; 
+        text-align: left;
+    }
+    
+    .origin-content p {
+        font-size: 0.95rem;
     }
 }

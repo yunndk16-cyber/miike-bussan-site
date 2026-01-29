@@ -34,7 +34,27 @@
                     <dt>資本金</dt>
                     <dd>20,000,000円</dd>
                 </div>
-                
+
+                <div class="profile-row">
+                    <dt>役員</dt>
+                    <dd>
+                        <ul class="officer-list">
+                            <li>
+                                <span class="officer-role">代表取締役会長</span>
+                                <span class="officer-name">阿津坂 秀人</span>
+                            </li>
+                            <li>
+                                <span class="officer-role">代表取締役社長</span>
+                                <span class="officer-name">阿津坂 剛秀</span>
+                            </li>
+                            <li>
+                                <span class="officer-role">取締役統括</span>
+                                <span class="officer-name">松村 浩史</span>
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+
                 <div class="profile-row">
                     <dt>免状</dt>
                     <dd>
@@ -116,11 +136,35 @@
                         <h4>「三池物産株式会社」へ組織変更</h4>
                         <p>
                             一層の飛躍を期すため、株式会社へと組織を改める。<br>
-                            業績の高揚と社会への貢献に努力し、現在に至る。
+                            業績の高揚と社会への貢献に努力。
                         </p>
                     </div>
                 </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1986年（昭和61年）</div>
+                    <div class="timeline-content">
+                        <h4>資本金を2,000万円へ増資</h4>
+                        <p>
+                            事業基盤の更なる安定と成長を目的に、昭和46年より段階的な増資を経て資本金を2,000万円とする。<br>
+                            資本金を基に大牟田工業産業の発展を中心に尽力する。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024年（令和6年）</div>
+                    <div class="timeline-content">
+                        <h4>建設業許可の更新</h4>
+                        <p>
+                            取得以来、長年にわたり維持・更新を続けてきた一般建設業許可（管工事業、機械器具設置工事業）を本年も更新。<br>
+                            法令遵守（コンプライアンス）と安全管理を徹底し、確かな技術を次世代へと繋いでいます。
+                        </p>
+                    </div>
+                </div>
+                
             </div>
         </section>
 

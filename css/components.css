@@ -12,7 +12,7 @@
 /* --- ページヘッダー（お問い合わせページなどで使用） --- */
 .page-header {
     background-color: var(--contact-white);
-    padding: 60px 0 40px;
+    padding: 20px 0 20px;
     text-align: center;
     margin-bottom: 40px;
     border-bottom: 1px solid #eee;

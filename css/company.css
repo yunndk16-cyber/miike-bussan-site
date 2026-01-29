@@ -32,7 +32,7 @@
 /* --- ページヘッダー --- */
 .page-header {
     background-color: #fff;
-    padding: 60px 0 40px;
+    padding: 20px 0 20px;
     text-align: center;
     margin-bottom: 60px;
     border-bottom: 1px solid #eee;
@@ -212,5 +212,61 @@
     .license-number {
         font-size: 0.85rem;
         padding-left: 0; /* スマホでは左揃え */
+    }
+}
+
+/* --- 役員リストのデザイン --- */
+.officer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.officer-list li {
+    display: flex;
+    align-items: baseline; /* 文字のベースライン（下）を揃える */
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #eee; /* 薄い点線で区切る */
+    padding-bottom: 12px;
+}
+
+.officer-list li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.officer-role {
+    display: inline-block;
+    width: 150px; /* 役職名の幅を固定して揃える */
+    font-weight: 700;
+    color: #555;
+    font-size: 0.95rem;
+    flex-shrink: 0; /* 幅が縮まないようにする */
+}
+
+.officer-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #000;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .officer-list li {
+        flex-direction: column; /* スマホでは縦積みに */
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .officer-role {
+        width: 100%;
+        font-size: 0.85rem;
+        color: #888;
+    }
+    
+    .officer-name {
+        font-size: 1rem;
+        padding-left: 0;
     }
 }
