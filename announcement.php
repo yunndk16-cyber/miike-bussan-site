@@ -23,7 +23,7 @@ require_once 'header.php';
             </div>
 
             <div class="recruit-content">
-                <h2 class="recruit-title">一緒に明日を創るメンバーを募集しています</h2>
+                <h2 class="recruit-title">一緒に明日を創るメンバーを募集しています。</h2>
                 
                 <p class="recruit-lead">
                     三池物産株式会社では、業務拡大に伴い一緒に働く仲間を募集しています。<br>

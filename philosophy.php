@@ -33,7 +33,7 @@ require_once 'header.php';
 
                     <div class="shakun-body">
                         <p>
-                            信用企業の生命なり<br>
+                            信用は企業の生命なり。<br>
                             一回の誤りは信用を崩壊さす。<br>
                             社員は常に信用を落さざる様 努むべし。
                         </p>

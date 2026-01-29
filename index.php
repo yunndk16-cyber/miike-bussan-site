@@ -7,7 +7,7 @@ require_once 'header.php';
 
 <main>
     <section class="hero">
-        <img src="images/TOP3.jpg" alt="トップ画像">
+        <img src="images/TOP3.webp" alt="トップ画像" fetchpriority="high" decoding="sync">
     </section>
 
     <section class="stats-bar">
@@ -48,7 +48,7 @@ require_once 'header.php';
             
             <div class="greeting-grid">
                 <div class="greeting-image-wrapper">
-                    <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img">
+                    <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img" loading="lazy">
                 </div>
                 
                 <div class="greeting-content">

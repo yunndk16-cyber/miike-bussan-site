@@ -15,7 +15,7 @@
         <div class="header-inner">
             
             <a href="index.php" class="header-brand">
-                <img src="images/logo.png" alt="ロゴ" class="brand-logo">
+                <img src="images/logo.svg" alt="ロゴ" class="brand-logo">
                 <span class="brand-name">三池物産株式会社</span>
             </a>
 
