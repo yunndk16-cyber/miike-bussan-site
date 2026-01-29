@@ -1,8 +1,12 @@
-<?php require_once 'header.php'; ?>
+<?php 
+// 共通ヘッダー読み込み
+require_once 'header.php'; 
+?>
 
 <link rel="stylesheet" href="css/company.css">
 
 <main class="company-main">
+    
     <div class="page-header">
         <div class="company-container">
             <h1 class="page-title">会社情報</h1>
@@ -16,20 +20,22 @@
             <h2 class="section-title">会社概要</h2>
             
             <dl class="profile-list">
+                
                 <div class="profile-row">
                     <dt>会社名</dt>
                     <dd>三池物産株式会社</dd>
                 </div>
+                
                 <div class="profile-row">
                     <dt>創業</dt>
-                    <dd>昭和6年(1931年)<br>
-                        10月1日</dd>
+                    <dd>昭和6年(1931年)<br>10月1日</dd>
                 </div>
+                
                 <div class="profile-row">
                     <dt>設立</dt>
-                    <dd>昭和22年(1947年)<br>
-                        4月21日</dd>
+                    <dd>昭和22年(1947年)<br>4月21日</dd>
                 </div>
+                
                 <div class="profile-row">
                     <dt>資本金</dt>
                     <dd>20,000,000円</dd>
@@ -69,6 +75,7 @@
                         </div>
                     </dd>
                 </div>
+
                 <div class="profile-row">
                     <dt>取引銀行</dt>
                     <dd>
@@ -85,8 +92,7 @@
             <div class="timeline">
                 
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">1931年（昭和6年）</div>
+                    <div class="timeline-dot"></div> <div class="timeline-year">1931年（昭和6年）</div>
                     <div class="timeline-content">
                         <h4>「阿津坂商店」創業</h4>
                         <p>
@@ -171,4 +177,7 @@
     </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php 
+// 共通フッター読み込み
+require_once 'footer.php'; 
+?>

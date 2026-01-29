@@ -1,39 +1,59 @@
 @charset "UTF-8";
 
-/* --- 変数定義 --- */
+/* ==========================================================================
+   ファイル名: philosophy.css
+   役割: 社訓・経営理念ページ専用のデザイン設定
+   ========================================================================== */
+
+/* -------------------------------------------------------
+   【共通】色の設定（変数）
+   -------------------------------------------------------
+*/
 :root {
-    --philo-primary: #0050A0; /* ブランドカラー */
-    --philo-text: #333333;
-    --philo-bg: #F5F8FA;
+    --philo-primary: #0050A0; /* メインカラー（青） */
+    --philo-text: #333333;    /* 文字色 */
+    --philo-bg: #F5F8FA;      /* ページ全体の薄い背景色 */
     --font-serif: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif; /* 明朝体 */
 }
 
-/* 余白計算の補正 */
+/* 計算のズレを防ぐおまじない */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* --- レイアウト共通 --- */
+/* -------------------------------------------------------
+   【レイアウト】全体の設定
+   -------------------------------------------------------
+*/
 .philosophy-main {
     background-color: var(--philo-bg);
-    padding-bottom: 80px;
+    padding-bottom: 80px; /* 下の余白 */
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--philo-text);
 }
 
 .philosophy-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1000px; /* 少し狭めにして読みやすく */
+    margin: 0 auto;    /* 中央寄せ */
     padding: 0 20px;
 }
 
-/* --- ページヘッダー --- */
+/* -------------------------------------------------------
+   【1】ページヘッダー（タイトル部分）
+   -------------------------------------------------------
+*/
 .page-header {
     background-color: #fff;
-    padding: 20px 0 20px;
-    text-align: center;
+    
+    /* ▼ご質問にあった「余白」の設定です
+       padding: 上の余白  左右  下の余白;
+       お好みで数字（60pxなど）を変更してください。
+    */
+    padding: 20px 0 40px;
+    
+    text-align: center; /* 中央寄せ */
     margin-bottom: 60px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* 下の薄い線 */
 }
 
 .page-title {
@@ -47,28 +67,31 @@
     font-size: 0.9rem;
     color: #888;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: uppercase; /* 大文字にする */
 }
 
-/* --- 社訓セクション --- */
+/* -------------------------------------------------------
+   【2】社訓セクション（白いボックス）
+   -------------------------------------------------------
+*/
 .shakun-section {
     background-color: #fff;
-    padding: 60px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 60px; /* 内側の余白 */
+    border-radius: 12px; /* 角丸 */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* ふんわりした影 */
 }
 
 .shakun-grid {
     display: grid;
-    /* PCでは左右2分割 */
+    /* PCでは「画像」と「文章」を左右2分割 */
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center; /* 垂直方向の中央揃え */
+    align-items: center; /* 上下中央揃え */
 }
 
-/* 画像スタイル */
+/* --- 画像スタイル --- */
 .shakun-img-wrapper {
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15); /* 画像の影 */
     border-radius: 4px;
     overflow: hidden;
     line-height: 0;
@@ -78,47 +101,51 @@
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; /* アニメーション設定 */
 }
 
+/* マウスが乗った時に少し拡大する */
 .shakun-img:hover {
     transform: scale(1.02);
 }
 
-/* --- テキストスタイル（ここを中心に修正） --- */
+/* --- 文章スタイル --- */
 .shakun-text-area {
-    font-family: var(--font-serif);
-    /* ▼ Flexboxで中身を中央揃えにする設定 */
+    font-family: var(--font-serif); /* 明朝体に */
+    
+    /* 文字を中央揃えにする設定 */
     display: flex;
     flex-direction: column;
-    align-items: center;     /* これで青いラベルが真ん中に来ます */
+    align-items: center;    /* 横方向の中央 */
     justify-content: center;
-    text-align: center;      /* 文字自体も中央揃え */
+    text-align: center;
 }
 
+/* 「社訓」という青いラベル */
 .shakun-label {
     background-color: var(--philo-primary);
     color: #fff;
     padding: 5px 20px;
     font-size: 0.9rem;
-    font-family: sans-serif;
+    font-family: sans-serif; /* ここだけゴシック体 */
     letter-spacing: 0.1em;
     margin-bottom: 25px;
 }
 
+/* 「信用・信頼・和・心」の見出し */
 .shakun-heading {
     font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* 下線 */
     padding-bottom: 20px;
-    width: fit-content; /* 線の長さを文字幅に合わせる */
+    width: fit-content; /* 文字の幅に合わせて線を引く */
     color: #000;
 }
 
 .shakun-body p {
     font-size: 1.1rem;
-    line-height: 2.4;
+    line-height: 2.4; /* 行間を広めに */
     margin-bottom: 30px;
 }
 
@@ -127,13 +154,17 @@
 }
 
 
-/* --- レスポンシブ設定（スマホ対応） --- */
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   画面幅が 768px 以下の場合
+   -------------------------------------------------------
+*/
 @media (max-width: 768px) {
     .shakun-section {
-        padding: 40px 20px;
+        padding: 40px 20px; /* スマホでは余白を減らす */
     }
 
-    /* スマホでは1列（画像上・文章下） */
+    /* スマホでは1列（画像が上・文章が下）にする */
     .shakun-grid {
         grid-template-columns: 1fr; 
         gap: 40px;
@@ -146,7 +177,7 @@
 
     .shakun-heading {
         font-size: 1.6rem;
-        width: 100%; /* スマホでは線を横いっぱいにしてもOK */
+        width: 100%; /* スマホでは線を横いっぱいに引く */
     }
 
     .shakun-body p {

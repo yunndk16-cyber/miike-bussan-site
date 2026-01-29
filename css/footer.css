@@ -1,101 +1,118 @@
 @charset "UTF-8";
 
-/* ====================================
-   フッターエリアのデザイン
-   ==================================== */
+/* ==========================================================================
+   ファイル名: footer.css
+   役割: フッターエリア（黒い部分）専用のデザイン設定
+   ========================================================================== */
 
-/* --- 基本設定 --- */
+/* -------------------------------------------------------
+  【全体の基本設定】
+  -------------------------------------------------------
+*/
 .site-footer {
-    background-color: #222; /* 濃いグレーで引き締める */
-    color: #bbb;            /* 文字は明るめのグレー */
-    padding: 60px 0 20px;   /* 上の余白を広めに */
-    margin-top: 80px;       /* コンテンツとの距離 */
-    font-size: 0.9rem;
+    background-color: #222; /* 背景色：濃いグレー（ほぼ黒）で全体を引き締めます */
+    color: #bbb;            /* 文字色：真っ白だと目が痛いので、少し暗めのグレーにしています */
+    padding: 60px 0 20px;   /* 余白：上60px、左右0、下20px */
+    
+    /* 重要：フッターが上のコンテンツにくっつかないようにする設定 */
+    margin-top: 80px; 
+    
+    font-size: 0.9rem;      /* 文字サイズ：本文より少し小さめ */
     font-family: 'Noto Sans JP', sans-serif;
 }
 
 .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1100px; /* 横幅の制限 */
+    margin: 0 auto;    /* 中央寄せ */
+    padding: 0 20px;   /* スマホで見ても端がくっつかないように左右に隙間を確保 */
 }
 
-/* --- 上部：左右2カラムレイアウト --- */
+/* -------------------------------------------------------
+  【上部エリア】レイアウト設定
+  -------------------------------------------------------
+*/
 .footer-top {
+    /* Flexbox（フレックスボックス）：要素を横並びにする設定 */
     display: flex;
-    justify-content: space-between; /* 左右に配置 */
-    align-items: flex-start;        /* 上揃え */
-    margin-bottom: 50px;
+    justify-content: space-between; /* 「左の住所」と「右のメニュー」を両端に離して配置 */
+    align-items: flex-start;        /* 上のラインを揃える */
+    margin-bottom: 50px;            /* 下部エリアとの隙間 */
 }
 
-/* 左側：ロゴと住所 */
+/* --- 左側：会社情報（ロゴと住所） --- */
 .footer-info {
-    max-width: 400px;
+    max-width: 400px; /* 文字が横に長くなりすぎないように制限 */
 }
 
 .footer-logo-link {
     display: flex;
-    align-items: center;
-    text-decoration: none;
+    align-items: center; /* ロゴと社名を上下中央揃え */
+    text-decoration: none; /* 下線を消す */
     margin-bottom: 20px;
 }
 
 .footer-logo {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-    /* ロゴの色を白く反転させる魔法のコード */
+    height: 40px;      /* ロゴの高さ */
+    width: auto;       /* 幅はなりゆき */
+    margin-right: 10px; /* 社名との隙間 */
+    
+    /* ▼▼▼ 魔法のコード ▼▼▼
+       黒いロゴ画像を、CSSのフィルター機能で「色反転(invert)」させて
+       「白いロゴ」に見せています。背景が黒いので白くする必要があります。
+    */
     filter: brightness(0) invert(1);
 }
 
 .footer-company-name {
-    color: #fff; /* 社名は白で強調 */
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    color: #fff;       /* 社名は目立つように白(#fff) */
+    font-size: 1.3rem; /* 少し大きく */
+    font-weight: 700;  /* 太文字 */
+    letter-spacing: 0.05em; /* 文字間隔を少し広げる */
 }
 
 .footer-address {
-    line-height: 1.8;
-    opacity: 0.8;
+    line-height: 1.8; /* 行間を広げて読みやすく */
+    opacity: 0.8;     /* 少し透明にして、控えめな印象に */
 }
 
-/* 右側：ナビゲーションリンク */
-.footer-nav {
-    /* 必要に応じて幅指定など */
-}
-
+/* --- 右側：メニューリンク --- */
 .footer-nav-list {
-    list-style: none;
+    list-style: none; /* 箇条書きの「・」を消す */
     padding: 0;
     margin: 0;
+    
+    /* Grid（グリッド）：格子状に並べる設定 */
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2列で表示 */
-    gap: 15px 30px; /* 縦横の間隔 */
+    grid-template-columns: 1fr 1fr; /* 2列で表示する（1fr 1fr = 1:1の比率） */
+    gap: 15px 30px; /* 縦の隙間15px、横の隙間30px */
 }
 
 .footer-nav-list a {
     text-decoration: none;
     color: #bbb;
-    transition: color 0.3s;
+    transition: color 0.3s; /* 色が変わるアニメーションの時間 */
     display: inline-block;
 }
 
+/* マウスが乗った時の動き */
 .footer-nav-list a:hover {
-    color: #0050A0; /* ブランドカラー（青） */
-    transform: translateX(5px); /* 少し右に動く */
+    color: #0050A0; /* ブランドカラー（青）に変化 */
+    transform: translateX(5px); /* 右に5pxピョコッと動く */
 }
 
-/* --- 下部：注意書きとコピーライト --- */
+/* -------------------------------------------------------
+  【下部エリア】注意書きとコピーライト
+  -------------------------------------------------------
+*/
 .footer-bottom {
-    border-top: 1px solid #444; /* 区切り線 */
+    border-top: 1px solid #444; /* 上に薄い区切り線を引く */
     padding-top: 30px;
-    text-align: center;
+    text-align: center; /* 文字を真ん中寄せ */
 }
 
 .footer-note {
-    font-size: 0.8rem;
-    opacity: 0.6;
+    font-size: 0.8rem; /* 注意書きは小さめに */
+    opacity: 0.6;      /* 目立ちすぎないように薄く */
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -106,38 +123,43 @@
 
 .copyright {
     margin: 0;
-    opacity: 0.5;
+    opacity: 0.5; /* コピーライトはさらに薄く */
 }
 
-/* --- スマホ対応（レスポンシブ） --- */
+/* ==========================================================================
+  【スマホ対応（レスポンシブ）】
+  画面幅が 768px 以下（タブレット・スマホ）の時のルール
+  ==========================================================================
+*/
 @media (max-width: 768px) {
     .site-footer {
         padding: 40px 0 20px;
-        text-align: center; /* スマホでは中央揃え */
+        text-align: center; /* スマホでは全体を中央揃えにする */
     }
 
     .footer-top {
-        flex-direction: column; /* 縦積みに変更 */
-        align-items: center;
-        gap: 40px;
+        flex-direction: column; /* 横並びをやめて「縦積み」にする */
+        align-items: center;    /* 中央揃え */
+        gap: 40px;              /* 上下の要素の間隔 */
     }
 
     .footer-info {
-        max-width: 100%;
+        max-width: 100%; /* 幅制限を解除 */
     }
 
     .footer-logo-link {
-        justify-content: center;
+        justify-content: center; /* ロゴも中央寄せ */
     }
 
-    /* リンクも中央寄せで見やすく */
+    /* メニューリストの調整 */
     .footer-nav-list {
-        grid-template-columns: 1fr; /* 1列にする */
+        grid-template-columns: 1fr; /* スマホでは「1列」にする */
         gap: 15px;
         text-align: center;
     }
     
+    /* スマホではマウスオーバー（ホバー）がないので、動きを止める */
     .footer-nav-list a:hover {
-        transform: none; /* スマホでは動きを止める（誤タップ防止） */
+        transform: none; 
     }
 }

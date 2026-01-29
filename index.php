@@ -1,46 +1,59 @@
-<?php require_once 'header.php'; ?>
+<?php 
+// 共通のヘッダー（上のメニュー部分）を読み込む
+require_once 'header.php'; 
+?>
 
 <link rel="stylesheet" href="css/home.css">
 
 <main>
-    <section class="hero" style="padding: 0; margin: 0; width: 100%; font-size: 0; line-height: 0;">
-        <img src="images/TOP3.jpg" alt="トップ画像" style="width: 100%; height: auto; display: block;">
+    <section class="hero">
+        <img src="images/TOP3.jpg" alt="トップ画像">
     </section>
-    <section class="stats-bar" style="margin-top: 0;">
+
+    <section class="stats-bar">
         <div class="home-container">
             <div class="stats-grid">
+                
                 <div class="stats-item">
                     <div class="stats-label">Founded</div>
                     <div class="stats-number">1931</div>
                     <div class="stats-sub">昭和6年創業</div>
                 </div>
+                
                 <div class="stats-item">
                     <div class="stats-label">Bases</div>
                     <div class="stats-number">5</div>
                     <div class="stats-sub">国内拠点</div>
                 </div>
+                
                 <div class="stats-item">
                     <div class="stats-label">Partners</div>
                     <div class="stats-number">2000+</div>
                     <div class="stats-sub">取引メーカー数</div>
                 </div>
+                
                 <div class="stats-item">
                     <div class="stats-label">Location</div>
-                    <div class="stats-number" style="font-size: 3rem;">OMUTA</div>
+                    <div class="stats-number text-lg">OMUTA</div>
                     <div class="stats-sub">福岡県大牟田市本社</div>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="home-section greeting-section">
         <div class="home-container">
-            <h4 style="color: var(--home-primary); font-weight:700; margin-bottom:30px; text-align: center;">ごあいさつ</h4>
+            
+            <h4>ごあいさつ</h4>
+            
             <div class="greeting-grid">
                 <div class="greeting-image-wrapper">
-                    <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img" style="object-position: top center;">
+                    <img src="images/asaiti.jpg" alt="創業者 阿津坂 浅一" class="greeting-img">
                 </div>
+                
                 <div class="greeting-content">
                     <h2>信用は、<br>企業の生命なり。</h2>
+                    
                     <div class="greeting-text">
                         <p>
                             私たち三池物産は昭和6年に創業、昭和22年に福岡県大牟田市にて設立された会社です。<br>
@@ -52,10 +65,11 @@
                         <p>
                             従来と同様に皆様方の暖かいご支援を賜りたく心よりお願い申し上げます。
                         </p>
-                        <p style="text-align: right; margin-top: 30px; font-weight: 700; color: #555;">
+                        
+                        <p>
                             創業者　阿津坂 浅一<br>
                             　　　　明治42年～平成4年<br>
-                            　　　　（1909年～1992年）<br>
+                            　　　　（1909年～1992年）
                         </p>
                     </div>
                 </div>
@@ -66,6 +80,7 @@
     <section class="home-section origin-section">
         <div class="home-container origin-wrapper">
             <h2 class="section-title">社名の由来</h2>
+            
             <div class="origin-content">
                 <p>
                     　三池物産株式会社の社名は、福岡県大牟田市の旧地名「三池」に由来します。
@@ -92,4 +107,7 @@
     </section>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php 
+// 共通のフッター（下の黒い部分）を読み込む
+require_once 'footer.php'; 
+?>

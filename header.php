@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
+<html lang="ja"> <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>三池物産株式会社</title>
-    <link rel="stylesheet" href="css/base.css">
+    
+    <link rel="stylesheet" href="css/header.css">
+    
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <header class="site-header">
         <div class="header-inner">
+            
             <a href="index.php" class="header-brand">
                 <img src="images/logo.png" alt="ロゴ" class="brand-logo">
                 <span class="brand-name">三池物産株式会社</span>
@@ -48,14 +52,21 @@
     </header>
 
     <script>
+        // 画面の読み込みが終わってから動くようにするおまじない
         document.addEventListener('DOMContentLoaded', function() {
+            
+            // HTMLの中から「ボタン」と「スマホメニュー」を探して変数に入れる
             const hamburger = document.getElementById('js-hamburger');
             const mobileNav = document.getElementById('js-mobile-nav');
 
+            // 「ボタン」がクリックされた時の動きを設定
             hamburger.addEventListener('click', function() {
-                // ボタンとメニューに 'is-active' クラスを付け外しする
-                hamburger.classList.toggle('is-active');
-                mobileNav.classList.toggle('is-active');
+                
+                // toggle（トグル）：
+                // クラス 'is-active' が無ければ付ける、有れば外す
+                // これにより CSS が反応して、メニューが開いたり閉じたりします
+                hamburger.classList.toggle('is-active'); // ボタンを×印に変形させる
+                mobileNav.classList.toggle('is-active'); // メニューを画面外からスライドインさせる
             });
         });
     </script>

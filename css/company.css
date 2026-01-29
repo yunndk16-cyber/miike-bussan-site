@@ -1,35 +1,49 @@
 @charset "UTF-8";
 
-/* ▼▼▼ 全ての要素で余白を幅に含める（必須） ▼▼▼ */
+/* ==========================================================================
+   ファイル名: company.css
+   役割: 会社概要ページ専用のデザイン設定
+   ========================================================================== */
+
+/* 全ての要素で余白を幅に含める（レイアウト崩れ防止） */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* --- 変数定義 --- */
+/* -------------------------------------------------------
+   【共通】色の設定（変数）
+   -------------------------------------------------------
+*/
 :root {
-    --cp-primary: #0050A0;
-    --cp-text: #333333;
-    --cp-bg: #F5F8FA;
-    --cp-border: #e0e0e0;
+    --cp-primary: #0050A0; /* メインカラー（青） */
+    --cp-text: #333333;    /* 文字色 */
+    --cp-bg: #F5F8FA;      /* 背景色 */
+    --cp-border: #e0e0e0;  /* 線の色 */
 }
 
-/* --- レイアウト共通 --- */
+/* -------------------------------------------------------
+   【レイアウト】全体の設定
+   -------------------------------------------------------
+*/
 .company-main {
     background-color: var(--cp-bg);
-    padding-bottom: 80px;
+    padding-bottom: 80px; /* 下の余白 */
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--cp-text);
-    overflow-x: hidden;
+    overflow-x: hidden; /* 横スクロール防止 */
 }
 
 .company-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto; /* 中央寄せ */
     padding: 0 20px;
     width: 100%;
 }
 
-/* --- ページヘッダー --- */
+/* -------------------------------------------------------
+   【1】ページヘッダー（タイトル部分）
+   -------------------------------------------------------
+*/
 .page-header {
     background-color: #fff;
     padding: 20px 0 20px;
@@ -52,16 +66,10 @@
     text-transform: uppercase;
 }
 
-/* --- セクション共通 --- */
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    border-left: 5px solid var(--cp-primary);
-    padding-left: 15px;
-    color: #000;
-}
-
+/* -------------------------------------------------------
+   【2】コンテンツセクション（白い箱）
+   -------------------------------------------------------
+*/
 .content-section {
     background: #fff;
     padding: 50px;
@@ -71,7 +79,20 @@
     width: 100%;
 }
 
-/* --- 会社概要テーブル (横並びレイアウト) --- */
+/* 「会社概要」「会社のあゆみ」の見出し */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--cp-primary); /* 左側の青い線 */
+    padding-left: 15px;
+    color: #000;
+}
+
+/* -------------------------------------------------------
+   【3】会社概要テーブル（横並びリスト）
+   -------------------------------------------------------
+*/
 .profile-list {
     display: flex;
     flex-direction: column;
@@ -80,38 +101,73 @@
     margin: 0;
 }
 
-/* ここで横並びを指定 */
+/* 行の設定 */
 .profile-row {
     display: flex;
-    flex-direction: row; /* 常に横並び */
+    flex-direction: row; /* 横並び */
     border-bottom: 1px solid var(--cp-border);
     width: 100%;
 }
 
-/* 左側：項目名（背景あり） */
+/* 左側：項目名（会社名、創業など） */
 .profile-row dt {
-    width: 30%;      /* 幅30% */
+    width: 30%;          /* 幅30% */
     background-color: #fafafa;
     padding: 20px;
     font-weight: 700;
     display: flex;
     align-items: center; /* 上下中央揃え */
-    /* 文字が勝手に改行して縦書きみたいにならないための設定 */
-    white-space: nowrap; 
+    white-space: nowrap; /* 文字の折り返し禁止 */
 }
 
 /* 右側：内容 */
 .profile-row dd {
-    width: 70%;      /* 幅70% */
+    width: 70%;          /* 幅70% */
     padding: 20px;
     margin: 0;
-    word-break: break-all; /* 長い英単語などでレイアウトが崩れないように */
+    word-break: break-all; /* 長い文字で崩れないように */
     line-height: 1.8;
 }
 
-/* --- 免状（許認可）専用のデザイン --- */
+/* --- 役員リストのデザイン --- */
+.officer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.officer-list li {
+    display: flex;
+    align-items: baseline; /* 文字の下ラインを揃える */
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #eee; /* 薄い点線 */
+    padding-bottom: 12px;
+}
+
+.officer-list li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.officer-role {
+    display: inline-block;
+    width: 150px; /* 役職名の幅を固定して揃える */
+    font-weight: 700;
+    color: #555;
+    font-size: 0.95rem;
+    flex-shrink: 0; /* 縮まないように固定 */
+}
+
+.officer-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #000;
+}
+
+/* --- 免状のデザイン --- */
 .license-block {
-    margin-bottom: 20px; /* 2つの免状の間隔をあける */
+    margin-bottom: 20px;
 }
 
 .license-block:last-child {
@@ -132,12 +188,17 @@
     padding-left: 10px; /* 番号だけ少し右にずらす */
 }
 
-/* --- 沿革（タイムライン） --- */
+
+/* -------------------------------------------------------
+   【4】会社のあゆみ（タイムライン）
+   -------------------------------------------------------
+*/
 .timeline {
     position: relative;
     padding: 20px 0;
 }
 
+/* 縦のグレー線 */
 .timeline::before {
     content: '';
     position: absolute;
@@ -151,21 +212,22 @@
 .timeline-item {
     position: relative;
     margin-bottom: 40px;
-    padding-left: 60px;
+    padding-left: 60px; /* 左側にスペースを空ける */
 }
 
 .timeline-item:last-child {
     margin-bottom: 0;
 }
 
+/* 丸い点 */
 .timeline-dot {
     position: absolute;
-    left: 11px;
+    left: 11px; /* 線の真ん中に来るように調整 */
     top: 5px;
     width: 20px;
     height: 20px;
     background: var(--cp-primary);
-    border-radius: 50%;
+    border-radius: 50%; /* まん丸にする */
     border: 4px solid #fff;
     box-shadow: 0 0 0 1px #e0e0e0;
 }
@@ -189,18 +251,24 @@
     color: #000;
 }
 
-/* --- レスポンシブ (スマホ調整) --- */
+
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   画面幅が 768px 以下の場合
+   -------------------------------------------------------
+*/
 @media (max-width: 768px) {
+    
     .content-section {
-        padding: 30px 15px; /* 外枠の余白を少し減らす */
+        padding: 30px 15px; /* 外枠の余白を減らす */
     }
 
-    /* ▼▼▼ スマホでも横並びを維持するための調整 ▼▼▼ */
+    /* --- 会社概要テーブルの調整 --- */
     .profile-row dt {
-        width: 30%; /* 比率はPCと同じ */
-        padding: 15px 10px; /* 余白を狭くして文字スペース確保 */
-        font-size: 0.85rem; /* 文字を少し小さく */
-        white-space: normal; /* スマホなら改行してもOK */
+        width: 30%;         /* 比率はそのまま */
+        padding: 15px 10px; /* 余白を詰める */
+        font-size: 0.85rem;
+        white-space: normal; /* 文字の折り返しを許可する */
         line-height: 1.4;
     }
     
@@ -209,52 +277,9 @@
         font-size: 0.9rem;
     }
 
-    .license-number {
-        font-size: 0.85rem;
-        padding-left: 0; /* スマホでは左揃え */
-    }
-}
-
-/* --- 役員リストのデザイン --- */
-.officer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.officer-list li {
-    display: flex;
-    align-items: baseline; /* 文字のベースライン（下）を揃える */
-    margin-bottom: 12px;
-    border-bottom: 1px dashed #eee; /* 薄い点線で区切る */
-    padding-bottom: 12px;
-}
-
-.officer-list li:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.officer-role {
-    display: inline-block;
-    width: 150px; /* 役職名の幅を固定して揃える */
-    font-weight: 700;
-    color: #555;
-    font-size: 0.95rem;
-    flex-shrink: 0; /* 幅が縮まないようにする */
-}
-
-.officer-name {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: #000;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
+    /* --- 役員リストの調整 --- */
     .officer-list li {
-        flex-direction: column; /* スマホでは縦積みに */
+        flex-direction: column; /* 縦積みに変更 */
         align-items: flex-start;
         gap: 4px;
     }
@@ -267,6 +292,12 @@
     
     .officer-name {
         font-size: 1rem;
+        padding-left: 0;
+    }
+
+    /* --- 免状の調整 --- */
+    .license-number {
+        font-size: 0.85rem;
         padding-left: 0;
     }
 }

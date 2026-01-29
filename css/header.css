@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+  【ファイル名】 header.css
+  【役割】 
+   1. サイト全体の基本設定（フォントやリセット）
+   2. ヘッダー（上のメニュー）のデザイン
+   3. スマホ用メニューのアニメーション設定
+  ==========================================================================
+*/
+
+/* -------------------------------------------------------
+  【1】サイト全体の基本リセット
+  ブラウザごとの表示のズレをなくすための設定です。
+  -------------------------------------------------------
+*/
+body {
+    margin: 0;      /* 画面の端っこに勝手な隙間ができないようにする */
+    padding: 0;
+    
+    /* ▼ヘッダーを「固定」しているための調整
+      ヘッダーは position: fixed で宙に浮いているため、
+      そのままだと最初のコンテンツがヘッダーの下に潜り込んで隠れてしまいます。
+      そのため、ヘッダーの高さ分（約70〜80px）だけ、あらかじめ余白を空けています。
+    */
+    padding-top: 80px; 
+
+    /* フォント（文字）の設定：WindowsやMacで見やすくするための呪文 */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333; /* 文字の色：真っ黒(#000)ではなく、読みやすい濃いグレー(#333) */
+}
+
+ul {
+    list-style: none; /* リストの「・」マークを消す */
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none; /* リンクの下線を消す */
+    color: inherit;        /* 勝手に青色にせず、親要素の色を引き継ぐ */
+}
+
+/* -------------------------------------------------------
+  【2】ヘッダーエリアのデザイン
+  -------------------------------------------------------
+*/
+.site-header {
+    width: 100%;
+    background-color: #fff; /* 背景色：白 */
+    
+    /* 下に薄い影を落として、浮いているような立体感を出す */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    
+    /* ▼重要：ヘッダーを画面上に固定する設定 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;   /* 重なり順の指定。数字を大きくして、他の要素より手前に表示させる */
+}
+
+.header-inner {
+    max-width: 1200px;  /* 横幅が広がりすぎないように制限 */
+    margin: 0 auto;     /* 中央寄せ */
+    padding: 0 20px;    /* 左右の余白 */
+    height: 70px;       /* ヘッダーの高さ */
+    
+    /* ▼Flexbox（フレックスボックス）
+       ロゴとメニューを横並びにして、両端（左と右）に配置する設定 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 上下中央揃え */
+}
+
+/* --- 左側：ロゴと社名 --- */
+.header-brand {
+    display: flex;
+    align-items: center; /* 上下中央揃え */
+}
+
+.brand-logo {
+    height: 40px; /* ロゴ画像の高さ（ここを変えるとロゴサイズが変わる） */
+    width: auto;  
+    margin-right: 10px; /* 社名との間の余白 */
+}
+
+.brand-name {
+    font-size: 1.2rem;      /* 文字の大きさ */
+    font-weight: 700;       /* 太字 */
+    letter-spacing: 0.05em; /* 文字間隔 */
+    color: #333;
+}
+
+/* --- 右側：パソコン用メニュー --- */
+.pc-nav {
+    display: block; /* PCでは表示する */
+}
+
+.pc-nav .nav-list {
+    display: flex; /* 横並びにする */
+    gap: 30px;     /* メニュー項目同士の間隔 */
+    align-items: center;
+}
+
+/* メニューのリンク文字設定 */
+.pc-nav a {
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s; /* 色が変わるのをなめらかに */
+}
+
+/* マウスが乗った時 */
+.pc-nav a:hover {
+    color: #0050A0; /* 青色に変化 */
+}
+
+/* --- 「お問い合わせ」ボタンのデザイン --- */
+.btn-contact {
+    background-color: #0050A0; /* 背景色：青 */
+    color: #fff !important;    /* 文字色：白（強制） */
+    padding: 10px 20px !important; /* ボタンの大きさ */
+    border-radius: 4px;        /* 角を少し丸く */
+}
+
+.btn-contact:hover {
+    opacity: 0.8; /* マウスが乗ったら少し透明にする */
+}
+
+
+/* -------------------------------------------------------
+  【3】スマホ対応（レスポンシブ設定）
+  画面幅が 991px 以下になったら適用されるルール
+  ※以前の768pxだと、タブレットでメニューが崩れることがあるため
+    少し余裕を持って 991px に設定しています。
+  -------------------------------------------------------
+*/
+
+/* 初期状態：スマホ用パーツは隠しておく */
+.hamburger-btn { display: none; }
+.mobile-nav { display: none; }
+
+@media (max-width: 991px) {
+    
+    /* ▼PC用のメニューを非表示にする（重要！） */
+    .pc-nav {
+        display: none;
+    }
+
+    /* --- ハンバーガーボタン（三本線）を表示 --- */
+    .hamburger-btn {
+        display: block; /* 表示する */
+        position: relative;
+        width: 30px;
+        height: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1100; /* メニューが開いてもその上に見えるように一番手前に */
+        padding: 0;
+    }
+
+    /* 3本の線の設定 */
+    .hamburger-btn span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333; /* 線の色 */
+        transition: all 0.3s;   /* アニメーション設定 */
+    }
+
+    /* 線の位置（上・真ん中・下） */
+    .hamburger-btn span:nth-child(1) { top: 0; }
+    .hamburger-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .hamburger-btn span:nth-child(3) { bottom: 0; }
+
+    /* ▼ボタンが押された時（is-activeがついた時）の変化 
+      3本の線を回転させて「×」印を作ります
+    */
+    .hamburger-btn.is-active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg); /* 斜め45度 */
+    }
+    .hamburger-btn.is-active span:nth-child(2) {
+        opacity: 0; /* 真ん中の線を消す */
+    }
+    .hamburger-btn.is-active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg); /* 逆斜め45度 */
+    }
+
+    /* --- スマホ用メニュー本体（開くやつ） --- */
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;  /* ★重要：最初は画面の「右の外」に隠しておく */
+        width: 80%;    /* 画面幅の80%くらいの広さ */
+        height: 100vh; /* 画面の縦いっぱい */
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s; /* スルッと出てくるアニメーション設定 */
+        padding-top: 80px;
+        z-index: 1050;
+    }
+
+    /* クラス is-active がついたら右から出てくる */
+    .mobile-nav.is-active {
+        right: 0; /* 画面の右端に合わせる（表示される） */
+    }
+
+    /* メニューリストのデザイン */
+    .mobile-nav-list li {
+        border-bottom: 1px solid #eee; /* 区切り線 */
+    }
+
+    .mobile-nav-list a {
+        display: block;
+        padding: 15px 20px; /* 指で押しやすい広さに */
+        font-weight: 700;
+        color: #333;
+    }
+}

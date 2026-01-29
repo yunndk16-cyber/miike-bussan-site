@@ -1,45 +1,64 @@
 @charset "UTF-8";
 
-/* ====================================
-   ホーム：変数・共通設定
-   ==================================== */
+/* ==========================================================================
+   ファイル名: home.css
+   役割: トップページ専用のデザイン設定
+   ========================================================================== */
+
+/* -------------------------------------------------------
+   【共通】色の設定（変数）
+   後で色を変えたい時はここを変更すれば一括で変わります
+   -------------------------------------------------------
+*/
 :root {
-    --home-primary: #0050A0;
-    --home-text: #333333;
-    --home-light-bg: #F5F8FA;
+    --home-primary: #0050A0;  /* メインカラー（青） */
+    --home-text: #333333;     /* 文字色（濃いグレー） */
+    --home-light-bg: #F5F8FA; /* 薄いグレーの背景色 */
 }
 
+/* 各セクションの余白設定 */
 .home-section {
-    padding: 20px 0;
+    padding: 20px 0; /* 上下に広めの余白 */
 }
 
+/* コンテンツの幅制限 */
 .home-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* ====================================
-   メインビジュアル
-   ==================================== */
+/* -------------------------------------------------------
+   【1】メインビジュアル（一番上の画像）
+   -------------------------------------------------------
+*/
 .hero {
     width: 100%;
-    margin-bottom: 0;
-    line-height: 0;
+    margin: 0;
+    line-height: 0; /* 画像の下に変な隙間ができないようにする */
 }
 
-/* ====================================
-   数字で見る（Stats）バー
-   ==================================== */
+.hero img {
+    width: 100%;    /* 画面いっぱいに広げる */
+    height: auto;   /* 高さは自動調整 */
+    display: block;
+}
+
+/* -------------------------------------------------------
+   【2】数字で見るデータバー（Stats）
+   -------------------------------------------------------
+*/
 .stats-bar {
+    /* 青色のグラデーション背景 */
     background: linear-gradient(135deg, #004080 0%, #0050A0 100%);
     color: white;
     padding: 60px 0;
+    margin-top: 0;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4つの要素を均等に並べる */
     gap: 20px;
     text-align: center;
 }
@@ -48,7 +67,7 @@
     position: relative;
 }
 
-/* PCのみ区切り線 */
+/* PC画面のみ：右側に区切り線を入れる */
 @media (min-width: 993px) {
     .stats-item:not(:last-child)::after {
         content: '';
@@ -57,7 +76,7 @@
         top: 10%;
         height: 80%;
         width: 1px;
-        background-color: rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.2); /* 半透明の白い線 */
     }
 }
 
@@ -65,7 +84,7 @@
     font-size: 0.9rem;
     opacity: 0.8;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: uppercase; /* 大文字に変換 */
     margin-bottom: 5px;
     font-family: sans-serif;
 }
@@ -78,33 +97,40 @@
     margin-bottom: 5px;
 }
 
+/* 「OMUTA」の文字サイズ調整用 */
+.stats-number.text-lg {
+    font-size: 3rem; 
+}
+
 .stats-sub {
     font-size: 0.85rem;
     opacity: 0.8;
 }
 
-/* ====================================
-   ごあいさつセクション
-   ==================================== */
+/* -------------------------------------------------------
+   【3】ごあいさつセクション
+   -------------------------------------------------------
+*/
 .greeting-section {
     background-color: #fff;
+    padding-top: 20px;
 }
 
-/* ▼▼▼ 修正：「ごあいさつ」の見出しを程よい大きさに変更 ▼▼▼ */
+/* 「ごあいさつ」という見出し */
 .greeting-section h4 {
-    font-size: 2.0rem;   /* 2.5rem → 2.0rem に少し縮小しました */
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: 2.0rem;   /* 文字サイズ */
+    text-align: center;  /* 中央寄せ */
+    margin-bottom: 20px; /* 下の余白 */
     color: var(--home-primary);
     font-weight: 700;
     letter-spacing: 0.1em;
-    font-family: "Yu Mincho", serif;
+    font-family: "Yu Mincho", serif; /* 明朝体 */
 }
-/* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
+/* 2カラムレイアウト（画像と文章） */
 .greeting-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.2fr; /* 左:右 = 1 : 1.2 の比率 */
     gap: 60px;
     align-items: center;
 }
@@ -112,7 +138,7 @@
 /* 画像まわり */
 .greeting-image-wrapper {
     position: relative;
-    box-shadow: 20px 20px 0 #f0f4f8;
+    box-shadow: 20px 20px 0 #f0f4f8; /* 背景の四角い影 */
     border-radius: 4px;
 }
 
@@ -120,6 +146,7 @@
     width: 100%;
     height: auto;
     display: block;
+    object-position: top center; /* 写真の表示位置調整 */
 }
 
 /* 文章まわり */
@@ -137,29 +164,31 @@
 }
 
 .greeting-text p {
-    font-size: 1.25rem; 
-    line-height: 2.0;   
+    font-size: 1.25rem; /* 本文の文字サイズ */
+    line-height: 2.0;   /* 行間 */
     margin-bottom: 30px;
-    text-align: justify;
+    text-align: justify; /* 両端揃え */
 }
 
+/* 最後の段落（署名部分）だけ右寄せにする */
 .greeting-text p:last-child {
     font-size: 1.1rem; 
     text-align: right;
     font-weight: 700;
     color: #555;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-/* ====================================
-   社名の由来セクション
-   ==================================== */
+/* -------------------------------------------------------
+   【4】社名の由来セクション
+   -------------------------------------------------------
+*/
 .origin-section {
-    background-color: var(--home-light-bg);
+    background-color: var(--home-light-bg); /* 背景を薄いグレーに */
 }
 
 .origin-wrapper {
-    max-width: 900px;
+    max-width: 900px; /* 読みやすいように幅を少し狭くする */
     margin: 0 auto;
 }
 
@@ -173,6 +202,7 @@
     padding-bottom: 15px;
 }
 
+/* タイトルの下線 */
 .section-title::after {
     content: '';
     position: absolute;
@@ -198,19 +228,21 @@
     font-size: 1.2rem;
 }
 
-/* ====================================
-   レスポンシブ対応
-   ==================================== */
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   -------------------------------------------------------
+*/
+/* タブレット・小さいPC向け (992px以下) */
 @media (max-width: 992px) {
     .stats-grid { 
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr; /* 2列にする */
         gap: 30px; 
     }
     
-    .stats-item::after { display: none; }
+    .stats-item::after { display: none; /* 区切り線を消す */ }
 
     .greeting-grid { 
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* 1列にする */
         gap: 40px;
     }
     
@@ -226,14 +258,15 @@
     }
 }
 
-/* スマホ用調整 */
+/* スマホ向け (576px以下) */
 @media (max-width: 576px) {
-    /* 「ごあいさつ」見出しのスマホ調整 */
+    /* 「ごあいさつ」見出し調整 */
     .greeting-section h4 {
-        font-size: 1.7rem; /* スマホでも少し控えめに調整 */
+        font-size: 1.7rem; 
         margin-bottom: 30px;
     }
 
+    /* データバーをコンパクトに */
     .stats-grid {
         grid-template-columns: 1fr 1fr;
         gap: 20px 10px;
@@ -252,14 +285,16 @@
         margin: 5px 0;
     }
     
-    .stats-number[style] {
-        font-size: 1.6rem !important; 
+    /* 「OMUTA」の文字も小さく */
+    .stats-number.text-lg {
+        font-size: 1.6rem; 
     }
 
     .stats-sub {
         font-size: 0.7rem;
     }
     
+    /* 本文の文字サイズをスマホ用に調整 */
     .greeting-text p {
         font-size: 1.05rem; 
         text-align: left;
