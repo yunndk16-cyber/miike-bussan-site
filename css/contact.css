@@ -1,14 +1,30 @@
 @charset "UTF-8";
 
-/* --- 変数定義 (共通カラー) --- */
+/* ==========================================================================
+   ファイル名: contact.css
+   役割: お問い合わせページ専用のデザイン設定
+   ========================================================================== */
+
+/* 全ての要素で余白を幅に含める */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------
+   【共通】色の設定
+   -------------------------------------------------------
+*/
 :root {
     --contact-primary: #0050A0; /* ブランドカラー（青） */
-    --contact-text: #333333;    /* テキスト色 */
+    --contact-text: #333333;    /* 文字色 */
     --contact-bg: #F5F8FA;      /* 背景色（薄いグレー） */
     --contact-white: #FFFFFF;
 }
 
-/* --- レイアウト --- */
+/* -------------------------------------------------------
+   【レイアウト】全体の設定
+   -------------------------------------------------------
+*/
 .contact-main {
     background-color: var(--contact-bg);
     padding-bottom: 80px;
@@ -22,7 +38,10 @@
     padding: 0 20px;
 }
 
-/* --- ページヘッダー --- */
+/* -------------------------------------------------------
+   【1】ページヘッダー（タイトル部分）
+   -------------------------------------------------------
+*/
 .page-header {
     background-color: var(--contact-white);
     padding: 20px 0 20px;
@@ -44,14 +63,17 @@
     letter-spacing: 1px;
 }
 
-/* --- コンタクトグリッド（2カラム） --- */
+/* -------------------------------------------------------
+   【2】お問い合わせカード（グリッド表示）
+   -------------------------------------------------------
+*/
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* PCは2列 */
-    gap: 30px;
+    grid-template-columns: 1fr 1fr; /* PCは2列 (1:1) */
+    gap: 30px; /* カードの間隔 */
 }
 
-/* --- カードスタイル --- */
+/* カード本体 */
 .contact-card {
     background: var(--contact-white);
     padding: 40px;
@@ -60,59 +82,64 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
+    /* 中身の高さが違ってもボタンの位置を揃える設定 */
     display: flex;
     flex-direction: column;
 }
 
+/* マウスが乗った時に浮き上がる */
 .contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* --- アイコン --- */
+/* アイコン（電話・メールマーク） */
 .contact-icon {
     font-size: 3rem;
     color: var(--contact-primary);
     margin-bottom: 20px;
 }
 
-/* --- 見出し --- */
+/* 見出し */
 .contact-card h2 {
     font-size: 1.4rem;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
-/* --- 説明文 --- */
+/* 説明文 */
 .contact-desc {
     font-size: 0.95rem;
     line-height: 1.8;
     margin-bottom: 30px;
     color: #666;
     text-align: left; /* 読みやすさのため左寄せ */
+    /* 余ったスペースをここで吸収して、下のボタン位置を揃える */
+    flex-grow: 1; 
 }
 
-/* --- アクションエリア（電話・メール） --- */
+/* アクションエリア（電話・メールボタン） */
 .contact-action {
-    margin-top: auto;
-    
+    margin-top: auto; /* 下に押し付ける */
     display: flex;
-    justify-content: center; /* 左右中央寄せ */
-    align-items: center;     /* 上下中央揃え */
-    gap: 10px;               /* 電話番号と（代表）の間の余白 */
-    
-    /* ▼▼▼ 修正箇所：ここを追記して順番を逆（左側）にします ▼▼▼ */
-    flex-direction: row-reverse; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-/* 電話番号スタイル */
+/* 電話番号の並び順（自然な順序） */
+.tel-wrapper {
+    flex-direction: row; /* 横並び（左から右） */
+}
+
+/* 電話番号リンク */
 .tel-link {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--contact-text);
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: sans-serif; /* 数字を見やすく */
     transition: color 0.3s;
 }
 
@@ -120,48 +147,50 @@
     color: var(--contact-primary);
 }
 
+/* 「（代表）」の注釈 */
 .tel-note {
     font-size: 0.9rem;
     color: #888;
     white-space: nowrap;
-    margin-top: 0;
-    
-    /* 電話番号(大きい文字)との視覚的な高さを合わせる微調整 */
-    transform: translateY(1px); 
+    transform: translateY(2px); /* 数字との高さ微調整 */
 }
 
-/* メールボタンスタイル */
+/* メールボタン */
 .mail-btn {
     display: inline-block;
     background-color: var(--contact-primary);
     color: #fff;
     text-decoration: none;
     padding: 15px 30px;
-    border-radius: 50px;
+    border-radius: 50px; /* カプセル型 */
     font-weight: 700;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0, 80, 160, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 80, 160, 0.3); /* 青い影 */
     transition: background-color 0.3s, transform 0.2s;
-    word-break: break-all; /* 長いメアドの改行対策 */
+    word-break: break-all; /* 長いメアドがはみ出さないように */
 }
 
 .mail-btn:hover {
-    background-color: #003d7a;
-    transform: scale(1.02);
+    background-color: #003d7a; /* 少し濃い青に */
+    transform: scale(1.02);     /* 少し拡大 */
 }
 
-/* --- レスポンシブ対応 --- */
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   画面幅が 768px 以下の場合
+   -------------------------------------------------------
+*/
 @media (max-width: 768px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* スマホは1列 */
+        grid-template-columns: 1fr; /* 1列（縦積み）にする */
         gap: 20px;
     }
 
     .contact-card {
-        padding: 30px 20px;
+        padding: 30px 20px; /* 余白を減らす */
     }
 
     .tel-link {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* 電話番号を少し小さく */
     }
 }

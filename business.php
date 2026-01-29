@@ -1,20 +1,26 @@
-<?php require_once 'header.php'; ?>
+<?php 
+// 共通ヘッダー読み込み
+require_once 'header.php'; 
+?>
 
-<link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/business.css">
 
 <main class="business-main">
     
     <div class="page-header">
-        <h1 class="page-title">事業案内</h1>
-        <p class="page-subtitle">BUSINESS</p>
+        <div class="business-container">
+            <h1 class="page-title">事業案内</h1>
+            <p class="page-subtitle">BUSINESS</p>
+        </div>
     </div>
+
     <section class="business-section">
         <div class="business-container">
+            
             <div class="business-grid">
                 
                 <div class="business-card">
-                    <div class="card-image" style="background-color: #b0c4de;">
+                    <div class="card-image color-01">
                         <span>産業機械</span>
                     </div>
                     <div class="card-content">
@@ -32,13 +38,13 @@
                 </div>
 
                 <div class="business-card">
-                    <div class="card-image" style="background-color: #a9a9a9;">
+                    <div class="card-image color-02">
                         <span>物流・荷役</span>
                     </div>
                     <div class="card-content">
                         <h3>物流・荷役車輌関係</h3>
                         <ul class="business-list">
-                            <li>各種輸送装置<br><span style="font-size:0.9em; color:#666;">（エアー、ベルト、チエン、スクリュー、バケット）</span></li>
+                            <li>各種輸送装置<br><span class="small-text">（エアー、ベルト、チエン、スクリュー、バケット）</span></li>
                             <li>揚降式搬送機械及装置</li>
                             <li>自動立体倉庫及搬送システム</li>
                             <li>鉄道機関車及客貨車</li>
@@ -49,7 +55,7 @@
                 </div>
 
                  <div class="business-card">
-                    <div class="card-image" style="background-color: #778899;">
+                    <div class="card-image color-03">
                         <span>電気機器</span>
                     </div>
                     <div class="card-content">
@@ -66,7 +72,7 @@
                 </div>
 
                 <div class="business-card">
-                    <div class="card-image" style="background-color: #8fbc8f;">
+                    <div class="card-image color-04">
                         <span>計測・測定</span>
                     </div>
                     <div class="card-content">
@@ -81,7 +87,7 @@
                 </div>
 
                 <div class="business-card">
-                    <div class="card-image" style="background-color: #708090;">
+                    <div class="card-image color-05">
                         <span>金属・配管</span>
                     </div>
                     <div class="card-content">
@@ -98,7 +104,7 @@
                 </div>
 
                 <div class="business-card">
-                    <div class="card-image" style="background-color: #696969;">
+                    <div class="card-image color-06">
                         <span>その他</span>
                     </div>
                     <div class="card-content">
@@ -122,4 +128,7 @@
     </section>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php 
+// 共通フッター読み込み
+require_once 'footer.php'; 
+?>

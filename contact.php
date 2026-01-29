@@ -1,8 +1,12 @@
-<?php require_once 'header.php'; ?>
+<?php 
+// 共通ヘッダー読み込み
+require_once 'header.php'; 
+?>
 
 <link rel="stylesheet" href="css/contact.css">
 
 <main class="contact-main">
+    
     <div class="page-header">
         <div class="contact-container">
             <h1 class="page-title">お問い合わせ</h1>
@@ -11,22 +15,26 @@
     </div>
 
     <div class="contact-container">
+        
         <div class="contact-grid">
             
             <section class="contact-card">
                 <div class="contact-icon">
                     <i class="fa-solid fa-phone"></i>
                 </div>
+                
                 <h2>お電話でのお問い合わせ</h2>
+                
                 <div class="contact-desc">
                     <p>
                         お電話でのお問い合わせにつきましては、<br>
                         下記電話番号までお願い致します。
                     </p>
                 </div>
-                <div class="contact-action">
-                    <a href="tel:0944571111" class="tel-link">0944-57-1111</a>
+                
+                <div class="contact-action tel-wrapper">
                     <span class="tel-note">（代表）</span>
+                    <a href="tel:0944571111" class="tel-link">0944-57-1111</a>
                 </div>
             </section>
 
@@ -34,7 +42,9 @@
                 <div class="contact-icon">
                     <i class="fa-solid fa-envelope"></i>
                 </div>
+                
                 <h2>メールでのお問い合わせ</h2>
+                
                 <div class="contact-desc">
                     <p>
                         メールでのお問い合わせにつきましては、<br>
@@ -42,6 +52,7 @@
                         追ってご連絡をさせていただきます。
                     </p>
                 </div>
+                
                 <div class="contact-action">
                     <a href="mailto:omuta@miike-bussan.co.jp" class="mail-btn">
                         omuta@miike-bussan.co.jp
@@ -53,4 +64,7 @@
     </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php 
+// 共通フッター読み込み
+require_once 'footer.php'; 
+?>

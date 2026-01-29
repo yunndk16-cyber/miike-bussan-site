@@ -1,17 +1,29 @@
 @charset "UTF-8";
 
-/* --- 変数定義 --- */
-:root {
-    --announce-primary: #0050A0; /* ブランドカラー */
-    --announce-bg: #F5F8FA;
-    --text-color: #333;
-}
+/* ==========================================================================
+   ファイル名: announcement.css
+   役割: アナウンス（採用情報）ページ専用のデザイン設定
+   ========================================================================== */
 
-/* 基本設定 */
+/* 全ての要素で余白を幅に含める */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+/* -------------------------------------------------------
+   【共通】色の設定
+   -------------------------------------------------------
+*/
+:root {
+    --announce-primary: #0050A0; /* ブランドカラー（青） */
+    --announce-bg: #F5F8FA;      /* 背景色（薄いグレー） */
+    --text-color: #333;          /* 文字色 */
+}
+
+/* -------------------------------------------------------
+   【レイアウト】全体の設定
+   -------------------------------------------------------
+*/
 .announce-main {
     background-color: var(--announce-bg);
     padding-bottom: 80px;
@@ -20,12 +32,15 @@
 }
 
 .announce-container {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px; /* 読みやすいように少し狭めに */
+    margin: 0 auto;   /* 中央寄せ */
     padding: 0 20px;
 }
 
-/* --- ヘッダー --- */
+/* -------------------------------------------------------
+   【1】ページヘッダー（タイトル部分）
+   -------------------------------------------------------
+*/
 .page-header {
     background-color: #fff;
     padding: 20px 0 20px;
@@ -47,24 +62,27 @@
     letter-spacing: 1px;
 }
 
-/* --- 募集セクション --- */
+/* -------------------------------------------------------
+   【2】募集セクション（白い大きな箱）
+   -------------------------------------------------------
+*/
 .recruit-section {
     background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 12px; /* 角を丸く */
+    overflow: hidden;    /* はみ出した部分を隠す */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* ふんわりした影 */
 }
 
-/* 画像エリア */
+/* --- 画像エリア --- */
 .recruit-image img {
     width: 100%;
     height: auto;
-    max-height: 400px;
-    object-fit: cover; /* 画像の比率を保ったままトリミング */
+    max-height: 400px;     /* 高くなりすぎないように制限 */
+    object-fit: cover;     /* 画像の比率を保ったままトリミング */
     display: block;
 }
 
-/* コンテンツエリア */
+/* --- コンテンツエリア（文章部分） --- */
 .recruit-content {
     padding: 50px;
 }
@@ -75,6 +93,7 @@
     margin-bottom: 20px;
     color: var(--announce-primary);
     text-align: center;
+    line-height: 1.4;
 }
 
 .recruit-lead {
@@ -83,15 +102,16 @@
     margin-bottom: 50px;
 }
 
-/* 求める人物像リスト */
+/* --- 求める人物像リスト --- */
 .ideal-candidate {
-    background-color: #f9fcff;
+    background-color: #f9fcff; /* とても薄い青色 */
     padding: 40px;
     border-radius: 8px;
     margin-bottom: 50px;
-    border: 1px solid #e1eaf5;
+    border: 1px solid #e1eaf5; /* 薄い青色の枠線 */
 }
 
+/* 「求める人物像」という見出し */
 .ideal-candidate h3 {
     text-align: center;
     margin-bottom: 30px;
@@ -100,6 +120,7 @@
     padding-bottom: 15px;
 }
 
+/* 見出しの下線 */
 .ideal-candidate h3::after {
     content: '';
     position: absolute;
@@ -112,21 +133,22 @@
 }
 
 .candidate-list {
-    list-style: none;
+    list-style: none; /* デフォルトの「・」を消す */
     padding: 0;
     margin: 0;
 }
 
 .candidate-list li {
     margin-bottom: 25px;
-    padding-left: 20px;
-    border-left: 4px solid var(--announce-primary);
+    padding-left: 20px; /* 左に余白 */
+    border-left: 4px solid var(--announce-primary); /* 左に青い縦線 */
 }
 
 .candidate-list li:last-child {
     margin-bottom: 0;
 }
 
+/* 項目名（「信用・信頼」を大切にする方 など） */
 .list-head {
     display: block;
     font-weight: 700;
@@ -141,11 +163,11 @@
     line-height: 1.6;
 }
 
-/* お問い合わせエリア */
+/* --- お問い合わせエリア --- */
 .recruit-contact {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eee; /* 上に区切り線 */
 }
 
 .recruit-contact h3 {
@@ -153,6 +175,7 @@
     margin-bottom: 20px;
 }
 
+/* メールボタン */
 .recruit-mail-btn {
     display: inline-flex;
     align-items: center;
@@ -164,26 +187,33 @@
     font-size: 1.1rem;
     font-weight: 700;
     padding: 18px 40px;
-    border-radius: 50px;
+    border-radius: 50px; /* カプセル型 */
     transition: opacity 0.3s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0,80,160, 0.3);
+    box-shadow: 0 4px 10px rgba(0,80,160, 0.3); /* 青い影 */
     margin: 20px 0 10px;
 }
 
+/* ボタンにマウスを乗せた時 */
 .recruit-mail-btn:hover {
     opacity: 0.9;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* 少し浮く */
 }
 
 .mail-note {
     font-size: 0.8rem;
     color: #888;
+    line-height: 1.5;
 }
 
-/* --- スマホ対応 --- */
+
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   画面幅が 768px 以下の場合
+   -------------------------------------------------------
+*/
 @media (max-width: 768px) {
     .recruit-content {
-        padding: 30px 20px;
+        padding: 30px 20px; /* 余白を減らす */
     }
     
     .recruit-title {
@@ -194,8 +224,9 @@
         padding: 25px;
     }
 
+    /* ボタンを幅いっぱいに押しやすくする */
     .recruit-mail-btn {
-        width: 100%; /* スマホではボタンを幅いっぱいに */
+        width: 100%; 
         padding: 15px;
     }
 }

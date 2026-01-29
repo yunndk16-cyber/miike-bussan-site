@@ -1,72 +1,131 @@
 @charset "UTF-8";
 
-/* --- 事業案内ページ全体のレイアウト --- */
-.business-main {
-    padding-bottom: 80px;
-    background-color: #f9f9f9;
+/* ==========================================================================
+   ファイル名: business.css
+   役割: 事業案内ページ専用のデザイン設定
+   ========================================================================== */
+
+/* 全ての要素で余白を幅に含める */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-.business-section {
-    padding: 0 0 60px; /* 上の余白はなくす（ヘッダーで確保するため） */
+/* -------------------------------------------------------
+   【共通】色の設定（変数）
+   -------------------------------------------------------
+*/
+:root {
+    --biz-primary: #0050A0; /* メインカラー */
+    --biz-text: #333333;    /* 文字色 */
+    --biz-bg: #F5F8FA;      /* 背景色 */
+}
+
+/* -------------------------------------------------------
+   【レイアウト】全体の設定
+   -------------------------------------------------------
+*/
+.business-main {
+    background-color: var(--biz-bg);
+    padding-bottom: 80px; /* 下の余白 */
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--biz-text);
 }
 
 .business-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* 中央寄せ */
     padding: 0 20px;
 }
 
-/* ★重要★
-   ここにあった .page-title や .page-subtitle の設定は削除しました。
-   代わりに components.css の共通デザイン（中央寄せ）が使われます。
+/* -------------------------------------------------------
+   【1】ページヘッダー（タイトル部分）
+   ※他のページとデザインを統一しました
+   -------------------------------------------------------
 */
+.page-header {
+    background-color: #fff;
+    padding: 20px 0 20px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
 
-/* --- カードグリッド --- */
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--biz-primary);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* -------------------------------------------------------
+   【2】事業カードグリッド（並べ方）
+   -------------------------------------------------------
+*/
+.business-section {
+    padding-bottom: 60px;
+}
+
 .business-grid {
     display: grid;
-    /* PC: 3列表示 */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    /* PCでは 3列 (1fr 1fr 1fr) で並べる */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* カード同士の間隔 */
 }
 
-/* カードのデザイン */
+/* --- カード本体のデザイン --- */
 .business-card {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
-    transition: transform 0.3s;
+    border-radius: 8px; /* 角丸 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 影 */
+    overflow: hidden; /* はみ出した部分を隠す */
+    transition: transform 0.3s; /* アニメーション時間 */
+    
+    /* 中身の高さが足りなくてもカードの高さを揃える設定 */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    height: 100%; 
 }
 
+/* マウスが乗った時に少し浮き上がる */
 .business-card:hover {
     transform: translateY(-5px);
 }
 
-/* 画像エリア */
+/* --- 画像エリア（上の色付き部分） --- */
 .card-image {
-    height: 200px;
-    background-color: #ccc;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #fff; /* 文字色：白 */
     font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 文字の影 */
 }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* ▼▼▼ 各カードの色設定 ▼▼▼ 
+   色を変えたい場合はここを変更してください
+*/
+.color-01 { background-color: #b0c4de; } /* 産業機械 */
+.color-02 { background-color: #a9a9a9; } /* 物流・荷役 */
+.color-03 { background-color: #778899; } /* 電気機器 */
+.color-04 { background-color: #8fbc8f; } /* 計測・測定 */
+.color-05 { background-color: #708090; } /* 金属・配管 */
+.color-06 { background-color: #696969; } /* その他 */
 
-/* 文章エリア */
+
+/* --- 文章エリア --- */
 .card-content {
     padding: 25px;
-    flex-grow: 1;
+    flex-grow: 1; /* 余ったスペースを埋める */
 }
 
 .card-content h3 {
@@ -78,8 +137,9 @@
     line-height: 1.4;
 }
 
+/* リストのデザイン */
 .business-list {
-    list-style: none;
+    list-style: none; /* デフォルトの「・」を消す */
     padding: 0;
     margin: 0;
 }
@@ -88,30 +148,47 @@
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 8px;
-    padding-left: 15px;
+    padding-left: 15px; /* 左にスペース */
     position: relative;
     line-height: 1.6;
-    overflow-wrap: break-word;
-    word-break: break-word;
+    word-break: break-word; /* 長い単語で崩れないように */
 }
 
+/* 独自の「・」をつける */
 .business-list li::before {
     content: '•';
-    color: #0050A0;
+    color: var(--biz-primary); /* ブランドカラー */
     position: absolute;
     left: 0;
     top: 0;
+    font-weight: bold;
 }
 
-/* --- レスポンシブ設定 --- */
+/* 注釈用の小さな文字 */
+.small-text {
+    font-size: 0.9em;
+    color: #888;
+}
+
+
+/* -------------------------------------------------------
+   【スマホ対応】レスポンシブ設定
+   -------------------------------------------------------
+*/
+/* タブレット (992px以下) */
 @media (max-width: 992px) {
     .business-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2列にする */
     }
 }
 
+/* スマホ (768px以下) */
 @media (max-width: 768px) {
     .business-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1列にする */
+    }
+    
+    .card-image {
+        height: 120px; /* 高さを少し低くする */
     }
 }
