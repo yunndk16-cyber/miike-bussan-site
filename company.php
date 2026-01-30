@@ -46,16 +46,16 @@ require_once 'header.php';
                     <dd>
                         <ul class="officer-list">
                             <li>
-                                <span class="officer-role">代表取締役会長</span>
-                                <span class="officer-name">阿津坂 秀人</span>
+                                <span class="officer-role">取締役会長</span>
+                                <span class="officer-name">阿津坂 秀人<br>あつさか　ひでと</span>
                             </li>
                             <li>
                                 <span class="officer-role">代表取締役社長</span>
-                                <span class="officer-name">阿津坂 剛秀</span>
+                                <span class="officer-name">阿津坂 剛秀<br>あつさか　たけひで</span>
                             </li>
                             <li>
                                 <span class="officer-role">取締役統括</span>
-                                <span class="officer-name">松村 浩史</span>
+                                <span class="officer-name">松村 浩史<br>まつむら　ひろふみ</span>
                             </li>
                         </ul>
                     </dd>
@@ -79,8 +79,7 @@ require_once 'header.php';
                 <div class="profile-row">
                     <dt>取引銀行</dt>
                     <dd>
-                        福岡銀行、筑邦銀行、大牟田柳川信用金庫、<br>
-                        三井住友銀行、広島銀行
+                        三井住友銀行、福岡銀行、筑邦銀行、大牟田柳川信用金庫、<br>
                     </dd>
                 </div>
             </dl>
@@ -163,9 +162,9 @@ require_once 'header.php';
                     <div class="timeline-dot"></div>
                     <div class="timeline-year">2024年（令和6年）</div>
                     <div class="timeline-content">
-                        <h4>建設業許可の更新</h4>
+                        <h4>建設業許可の取得</h4>
                         <p>
-                            取得以来、長年にわたり維持・更新を続けてきた一般建設業許可（管工事業、機械器具設置工事業）を本年も更新。<br>
+                            一般建設業許可（管工事業、機械器具設置工事業）を本年に取得<br>
                             法令遵守（コンプライアンス）と安全管理を徹底し、確かな技術を次世代へと繋いでいます。
                         </p>
                     </div>

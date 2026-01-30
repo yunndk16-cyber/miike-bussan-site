@@ -81,7 +81,7 @@
 }
 
 .stats-label {
-    font-size: 0.9rem;
+    font-size: 1.7rem;
     opacity: 0.8;
     letter-spacing: 1px;
     text-transform: uppercase; /* 大文字に変換 */
@@ -90,7 +90,7 @@
 }
 
 .stats-number {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.1;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -99,11 +99,11 @@
 
 /* 「OMUTA」の文字サイズ調整用 */
 .stats-number.text-lg {
-    font-size: 3rem; 
+    font-size: 3.5rem; 
 }
 
 .stats-sub {
-    font-size: 0.85rem;
+    font-size: 1.7rem;
     opacity: 0.8;
 }
 

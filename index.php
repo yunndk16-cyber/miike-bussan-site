@@ -35,7 +35,8 @@ require_once 'header.php';
                 <div class="stats-item">
                     <div class="stats-label">Location</div>
                     <div class="stats-number text-lg">OMUTA</div>
-                    <div class="stats-sub">福岡県大牟田市本社</div>
+                    <div class="stats-sub">本社：福岡県大牟田市
+                    </div>
                 </div>
             </div>
         </div>
