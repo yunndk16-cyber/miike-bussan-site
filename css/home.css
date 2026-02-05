@@ -285,9 +285,10 @@
         margin: 5px 0;
     }
     
-    /* 「OMUTA」の文字も小さく */
+    /* 「OMUTA」の文字サイズを他の数字に近づける */
     .stats-number.text-lg {
-        font-size: 1.6rem; 
+        font-size: 1.9rem; /* 1.6rem から 1.9rem に変更 */
+        margin-top: 3px;   /* 位置を微調整 */
     }
 
     .stats-sub {

@@ -81,7 +81,7 @@ a {
 .brand-logo {
     height: 40px; /* ロゴ画像の高さ（ここを変えるとロゴサイズが変わる） */
     width: auto;  
-    margin-right: 10px; /* 社名との間の余白 */
+    margin-right: 0px; /* 社名との間の余白 */
 }
 
 .brand-name {
