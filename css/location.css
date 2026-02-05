@@ -2,7 +2,7 @@
 
 /* ==========================================================================
    ファイル名: location.css
-   役割: 所在地ページ専用のデザイン設定
+   役割: 所在地ページ専用のデザイン設定（グリッドレイアウト版）
    ========================================================================== */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -100,30 +100,46 @@
     gap: 30px;
 }
 
+/* ▼▼▼ ここから大きく変更：情報リストのデザイン ▼▼▼ */
 .location-info {
     flex: 1;
     min-width: 300px;
 }
 
-.location-info dl { margin: 0; }
-
-.location-info dt {
-    float: left;
-    width: 100px;
-    font-weight: 700;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-    clear: both;
+.location-info dl {
+    margin: 0;
+    /* Gridレイアウト：左（項目）100px、右（内容）残り全部 */
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    border-top: 1px solid #eee; /* 一番上の線 */
 }
 
+.location-info dt,
 .location-info dd {
-    margin-left: 110px;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* 下線（これで1本に見えます） */
+    margin: 0;
+    line-height: 1.6;
 }
 
-.location-info dd.no-border { border-bottom: none; }
+/* 項目名（左側） */
+.location-info dt {
+    grid-column: 1; /* 1列目に配置 */
+    font-weight: 700;
+    display: flex;
+    align-items: center; /* 上下中央寄せ */
+}
 
+/* 内容（右側） */
+.location-info dd {
+    grid-column: 2; /* 2列目に配置 */
+    padding-left: 20px; /* 項目との間のスペース */
+    display: flex;
+    align-items: center; /* 1行の時は中央、複数行の時はなりゆき */
+    flex-wrap: wrap;     /* 長い文字は折り返す */
+}
+
+/* 地図エリア */
 .location-map {
     flex: 1;
     min-width: 300px;
@@ -139,10 +155,29 @@
     border: 0;
 }
 
+/* スマホ対応 */
 @media (max-width: 768px) {
-    .location-content { flex-direction: column; gap: 20px; }
+    .location-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
     .location-box { padding: 20px; }
+    
     .location-map { height: 200px; }
-    .location-info dt { width: 90px; font-size: 0.9rem; }
-    .location-info dd { margin-left: 100px; font-size: 0.9rem; }
+
+    /* スマホでも横並びを維持 */
+    .location-info dl {
+        grid-template-columns: 90px 1fr; /* スマホは項目幅を少し狭く */
+    }
+    
+    .location-info dt,
+    .location-info dd {
+        font-size: 0.95rem;
+        padding: 12px 0;
+    }
+    
+    .location-info dd {
+        padding-left: 15px;
+    }
 }
