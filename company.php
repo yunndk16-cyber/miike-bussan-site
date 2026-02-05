@@ -79,7 +79,7 @@ require_once 'header.php';
                 <div class="profile-row">
                     <dt>取引銀行</dt>
                     <dd>
-                        三井住友銀行、福岡銀行、筑邦銀行、大牟田柳川信用金庫、<br>
+                        三井住友銀行、福岡銀行、筑邦銀行、大牟田柳川信用金庫<br>
                     </dd>
                 </div>
             </dl>
