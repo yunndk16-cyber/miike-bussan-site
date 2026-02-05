@@ -62,7 +62,7 @@ require_once 'header.php';
                 </div>
 
                 <div class="profile-row">
-                    <dt>免状</dt>
+                    <dt>建設業許可</dt>
                     <dd>
                         <div class="license-block">
                             <span class="license-title">一般建設業：管工事業</span>
@@ -154,18 +154,6 @@ require_once 'header.php';
                         <p>
                             事業基盤の更なる安定と成長を目的に、昭和46年より段階的な増資を経て資本金を2,000万円とする。<br>
                             資本金を基に大牟田工業産業の発展を中心に尽力する。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2024年（令和6年）</div>
-                    <div class="timeline-content">
-                        <h4>建設業許可の取得</h4>
-                        <p>
-                            一般建設業許可（管工事業、機械器具設置工事業）を本年に取得<br>
-                            法令遵守（コンプライアンス）と安全管理を徹底し、確かな技術を次世代へと繋いでいます。
                         </p>
                     </div>
                 </div>
