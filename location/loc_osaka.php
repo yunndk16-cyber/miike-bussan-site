@@ -16,7 +16,7 @@
                     </dl>
                 </div>
                 <div class="location-map">
-                    <iframe src="https://maps.google.co.jp/maps?q=三池物産株式会社+大阪支店&output=embed&t=m&z=16"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6561.73653986515!2d135.48538600000003!3d34.683274!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e65656a8d545%3A0xf5d4732f918fb175!2z5LiJ5rGg54mp55Sj77yI5qCq77yJIOWkp-mYquaUr-W6lw!5e0!3m2!1sja!2sus!4v1770367944006!5m2!1sja!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

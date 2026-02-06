@@ -16,7 +16,7 @@
                     </dl>
                 </div>
                 <div class="location-map">
-                    <iframe src="https://maps.google.co.jp/maps?q=三池物産株式会社+本社&output=embed&t=m&z=16"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6689.702741757464!2d130.442901!3d33.034046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35404fb2e9550563%3A0xef9b4c402dbcae83!2z5LiJ5rGg54mp55Sj77yI5qCq77yJ!5e0!3m2!1sja!2sus!4v1770367696669!5m2!1sja!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
